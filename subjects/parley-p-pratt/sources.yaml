@@ -23,7 +23,10 @@ sources:
     url: https://archive.org/details/mormonismunveile01prat
     rights: public_domain
     priority: medium
-    ingest_status: cataloged_only
+    ingest_status: ocr_review_prepared
+    notes: >-
+      Archive.org OCR text staged under raw/ocr/ and raw/review/ for conservative
+      proofing before clean ingestion.
 
   - id: millennium-and-other-poems-1840
     title: The Millennium and Other Poems
@@ -56,9 +59,11 @@ sources:
     url: https://archive.org/details/dialoguebetw188401prat
     rights: public_domain
     priority: low
-    ingest_status: cataloged_only
+    ingest_status: ocr_review_prepared
     notes: >-
-      Registered with an Archive.org scan rather than a tertiary reference page.
+      Archive.org OCR text staged under raw/ocr/ and raw/review/ for conservative
+      proofing before clean ingestion. Registered with an Archive.org scan rather
+      than a tertiary reference page.
 
   - id: key-to-theology-1855
     title: Key to the Science of Theology
