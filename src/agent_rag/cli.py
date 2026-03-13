@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Sequence
 
 from .export_targets import DEFAULT_EXPORT_TARGETS, EXPORT_TARGETS
+from .ocr_filter import prepare_ocr_review_packet
 from .subject_pack import build_subject_pack, validate_subject_pack
 
 
@@ -31,6 +32,21 @@ def _build_parser() -> argparse.ArgumentParser:
             f"Defaults to recommended targets: {', '.join(DEFAULT_EXPORT_TARGETS)}"
         ),
     )
+
+    prepare_ocr_parser = subparsers.add_parser(
+        "prepare-ocr",
+        help="Normalize OCR text and generate a proofreader-ready review packet",
+    )
+    prepare_ocr_parser.add_argument("input_path", type=Path)
+    prepare_ocr_parser.add_argument("--output-dir", type=Path, required=True)
+    prepare_ocr_parser.add_argument("--document-id", required=True)
+    prepare_ocr_parser.add_argument("--source-id", required=True)
+    prepare_ocr_parser.add_argument("--work-title", required=True)
+    prepare_ocr_parser.add_argument("--document-title", required=True)
+    prepare_ocr_parser.add_argument("--author", required=True)
+    prepare_ocr_parser.add_argument("--source-type", default="primary")
+    prepare_ocr_parser.add_argument("--composed-year", type=int, default=None)
+    prepare_ocr_parser.add_argument("--preserve-linebreaks", action="store_true")
 
     return parser
 
@@ -62,6 +78,22 @@ def main(argv: Sequence[str] | None = None) -> int:
             f"Built subject pack {result.subject_id} -> {result.output_dir} "
             f"({result.document_count} documents, {result.chunk_count} chunks)"
         )
+        return 0
+
+    if args.command == "prepare-ocr":
+        output_dir = prepare_ocr_review_packet(
+            input_path=args.input_path,
+            output_dir=args.output_dir,
+            document_id=args.document_id,
+            source_id=args.source_id,
+            work_title=args.work_title,
+            document_title=args.document_title,
+            author=args.author,
+            source_type=args.source_type,
+            composed_year=args.composed_year,
+            preserve_linebreaks=args.preserve_linebreaks,
+        )
+        print(f"Prepared OCR review packet -> {output_dir}")
         return 0
 
     parser.error(f"Unknown command: {args.command}")

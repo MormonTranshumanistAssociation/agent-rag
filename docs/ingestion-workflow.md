@@ -51,7 +51,26 @@ raw/
   transcripts/
 ```
 
-### 4. Produce clean text documents
+### 4. Run OCR text through a proofreading filter when needed
+
+If a source comes from scans or OCR, do not move the raw text directly into `clean/`.
+
+Instead, prepare a review packet first:
+
+```bash
+PYTHONPATH=src python -m agent_rag.cli prepare-ocr \
+  raw.txt \
+  --output-dir review/<document-id> \
+  --document-id <document-id> \
+  --source-id <source-id> \
+  --work-title "<work title>" \
+  --document-title "<document title>" \
+  --author "<author>"
+```
+
+This creates a normalized OCR text, a candidate Markdown document, and a proofread prompt for an agent or human reviewer.
+
+### 5. Produce clean text documents
 
 Write or copy reviewed corpus text into `clean/`.
 
@@ -66,7 +85,7 @@ clean/
 
 Each clean Markdown file should include YAML front matter linking it back to a `source_id`.
 
-### 5. Author or review agent prompts
+### 6. Author or review agent prompts
 
 If the downstream experience depends on stable behavioral values, encode them in `prompts/system.md`.
 
@@ -80,13 +99,13 @@ Recommended values to state explicitly:
 
 If no authored prompt is present, `agent-rag build` will generate a default `exports/prompts/system.md` from subject metadata.
 
-### 6. Validate the pack
+### 7. Validate the pack
 
 ```bash
 PYTHONPATH=src python -m agent_rag.cli validate subjects/<slug>
 ```
 
-### 7. Build exports
+### 8. Build exports
 
 ```bash
 PYTHONPATH=src python -m agent_rag.cli build \
@@ -111,7 +130,7 @@ PYTHONPATH=src python -m agent_rag.cli build \
   --target elevenlabs
 ```
 
-### 8. Inspect outputs manually
+### 9. Inspect outputs manually
 
 Check:
 
