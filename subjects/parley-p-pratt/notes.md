@@ -52,7 +52,7 @@ The clean corpus now includes whole public-domain Gutenberg texts segmented by p
 - *Key to the Science of Theology*
 - *The Autobiography of Parley Parker Pratt* (main chaptered body; mixed-voice closing material and editorial appendix/transcriber matter excluded)
 
-This is a much stronger bootstrap than the earlier seed excerpts, but it is still not the full intended Parley corpus because several important titles remain available only as scans/OCR workflows rather than already-clean text. *Mormonism Unveiled* has now been ingested as a conservative first-pass whole-work OCR review, and OCR review packets remain staged for *A Dialogue between Joseph Smith and the Devil* under `raw/review/`.
+This is a much stronger bootstrap than the earlier seed excerpts, but it is still not the full intended Parley corpus because several important titles remain available only as scans/OCR workflows rather than already-clean text. *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* have now been ingested as conservative first-pass whole-work OCR reviews; other scan-driven titles still await the same treatment.
 
 ## Good next steps
 

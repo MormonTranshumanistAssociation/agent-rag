@@ -60,11 +60,12 @@ sources:
     url: https://archive.org/details/dialoguebetw188401prat
     rights: public_domain
     priority: low
-    ingest_status: ocr_review_prepared
+    ingest_status: first_pass_ocr_ingested
     notes: >-
-      Archive.org OCR text staged under raw/ocr/ and raw/review/ for conservative
-      proofing before clean ingestion. Registered with an Archive.org scan rather
-      than a tertiary reference page.
+      Archive.org OCR text staged under raw/ocr/ and raw/review/, then ingested as
+      a conservative first-pass whole-work clean document. Registered with an
+      Archive.org scan rather than a tertiary reference page; some readings may
+      deserve later second-pass proofing against the scan.
 
   - id: key-to-theology-1855
     title: Key to the Science of Theology
