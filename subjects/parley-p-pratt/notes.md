@@ -44,20 +44,20 @@ Several texts exist in multiple editions. Later editions may include revisions, 
 
 This `notes.md` file is for researchers and maintainers, not for authorial retrieval.
 
-## Seed excerpts included in this bootstrap
+## Whole-title primary texts currently ingested
 
-The clean corpus currently includes short public-domain excerpts from:
+The clean corpus now includes whole public-domain Gutenberg texts segmented by preface/chapter for:
 
 - *A Voice of Warning*
 - *Key to the Science of Theology*
-- *The Autobiography of Parley Parker Pratt*
+- *The Autobiography of Parley Parker Pratt* (main chaptered body; mixed-voice closing material and editorial appendix/transcriber matter excluded)
 
-These are not yet a full corpus; they are a working seed set to prove the repository structure and export pipeline.
+This is a much stronger bootstrap than the earlier seed excerpts, but it is still not the full intended Parley corpus because several important titles remain available only as scans/OCR workflows rather than already-clean text.
 
 ## Good next steps
 
-- ingest a longer autobiographical section with chapter boundaries
-- add *Late Persecutions* as a historical-narrative counterpoint
+- ingest *Late Persecutions* as a historical-narrative counterpoint once a clean OCR/text workflow is in place
 - add poetry/hymn material to widen stylistic coverage
+- ingest *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* from clean text or reviewed OCR
 - introduce explicit edition metadata fields
 - add duplicate-detection across overlapping editions

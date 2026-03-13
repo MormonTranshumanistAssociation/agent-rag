@@ -29,7 +29,7 @@ Bootstrap v0.1 includes:
 - canonical corpus + chunk export generation for local clean texts
 - target-ready export packages for **ElevenLabs** and **Amazon Bedrock**
 - a first curated subject pack for **Parley P. Pratt**
-- public-domain seed excerpts from Parley's writings
+- whole public-domain Gutenberg texts for three core Parley works, segmented by preface/chapter
 - pytest coverage and a GitHub Actions CI workflow
 
 ## Repository layout

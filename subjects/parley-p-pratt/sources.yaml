@@ -8,10 +8,11 @@ sources:
     url: https://www.gutenberg.org/ebooks/35554
     rights: public_domain
     priority: high
-    ingest_status: seeded_excerpt
+    ingest_status: full_text_ingested
     notes: >-
       Foundational missionary/theological work. Important for tone, doctrine,
-      millenarian expectation, and early apologetic language.
+      millenarian expectation, and early apologetic language. Whole public-domain
+      text segmented by preface/chapter from Project Gutenberg.
 
   - id: mormonism-unveiled-1838
     title: "Mormonism Unveiled: Zion's Watchman Unmasked"
@@ -68,10 +69,11 @@ sources:
     url: https://www.gutenberg.org/ebooks/35470
     rights: public_domain
     priority: high
-    ingest_status: seeded_excerpt
+    ingest_status: full_text_ingested
     notes: >-
       Late systematic theological work; useful for doctrinal vocabulary and
-      cosmological framing.
+      cosmological framing. Whole public-domain text segmented by preface/chapter
+      from Project Gutenberg.
 
   - id: autobiography-1888
     title: The Autobiography of Parley Parker Pratt
@@ -82,11 +84,13 @@ sources:
     url: https://www.gutenberg.org/ebooks/44896
     rights: public_domain
     priority: high
-    ingest_status: seeded_excerpt
+    ingest_status: full_body_ingested
     notes: >-
-      Posthumous edition of the autobiography edited by his son. Be careful to
-      separate the son's editorial preface from Parley's own autobiographical
-      writing.
+      Posthumous edition of the autobiography edited by his son. The clean corpus
+      currently ingests the chaptered autobiographical body from Project Gutenberg
+      while excluding the mixed-voice family-letters/John-Taylor closing material
+      and editorial appendix/transcriber matter; be careful to keep the son's
+      framing separate from Parley's own autobiographical writing.
 
   - id: wikipedia-parley-p-pratt
     title: Parley P. Pratt - Wikipedia
