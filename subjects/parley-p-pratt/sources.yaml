@@ -1,0 +1,126 @@
+sources:
+  - id: voice-of-warning-1837
+    title: A Voice of Warning
+    author: Parley P. Pratt
+    publication_year: 1837
+    source_type: primary
+    genre: theological_treatise
+    url: https://www.gutenberg.org/ebooks/35554
+    rights: public_domain
+    priority: high
+    ingest_status: seeded_excerpt
+    notes: >-
+      Foundational missionary/theological work. Important for tone, doctrine,
+      millenarian expectation, and early apologetic language.
+
+  - id: mormonism-unveiled-1838
+    title: "Mormonism Unveiled: Zion's Watchman Unmasked"
+    author: Parley P. Pratt
+    publication_year: 1838
+    source_type: primary
+    genre: polemic
+    url: https://archive.org/details/mormonismunveile01prat
+    rights: public_domain
+    priority: medium
+    ingest_status: cataloged_only
+
+  - id: millennium-and-other-poems-1840
+    title: The Millennium and Other Poems
+    author: Parley P. Pratt
+    publication_year: 1840
+    source_type: primary
+    genre: poetry
+    url: https://contentdm.lib.byu.edu/digital/collection/NCMP1820-1846/id/2832/
+    rights: public_domain
+    priority: medium
+    ingest_status: cataloged_only
+
+  - id: late-persecutions-1840
+    title: Late Persecutions of the Church of Jesus Christ of Latter-day Saints
+    author: Parley P. Pratt
+    publication_year: 1840
+    source_type: primary
+    genre: historical_narrative
+    url: https://contentdm.lib.byu.edu/digital/collection/NCMP1820-1846/id/2825/
+    rights: public_domain
+    priority: medium
+    ingest_status: cataloged_only
+
+  - id: dialogue-joseph-smith-devil-1844
+    title: A Dialogue between Joseph Smith and the Devil
+    author: Parley P. Pratt
+    publication_year: 1844
+    source_type: primary
+    genre: satire
+    url: https://archive.org/details/dialoguebetw188401prat
+    rights: public_domain
+    priority: low
+    ingest_status: cataloged_only
+    notes: >-
+      Registered with an Archive.org scan rather than a tertiary reference page.
+
+  - id: key-to-theology-1855
+    title: Key to the Science of Theology
+    author: Parley P. Pratt
+    publication_year: 1855
+    source_type: primary
+    genre: theological_treatise
+    url: https://www.gutenberg.org/ebooks/35470
+    rights: public_domain
+    priority: high
+    ingest_status: seeded_excerpt
+    notes: >-
+      Late systematic theological work; useful for doctrinal vocabulary and
+      cosmological framing.
+
+  - id: autobiography-1888
+    title: The Autobiography of Parley Parker Pratt
+    author: Parley P. Pratt
+    publication_year: 1888
+    source_type: primary
+    genre: autobiography
+    url: https://www.gutenberg.org/ebooks/44896
+    rights: public_domain
+    priority: high
+    ingest_status: seeded_excerpt
+    notes: >-
+      Posthumous edition of the autobiography edited by his son. Be careful to
+      separate the son's editorial preface from Parley's own autobiographical
+      writing.
+
+  - id: wikipedia-parley-p-pratt
+    title: Parley P. Pratt - Wikipedia
+    author: Wikipedia contributors
+    source_type: context
+    genre: reference_biography
+    url: https://en.wikipedia.org/wiki/Parley_P._Pratt
+    rights: open_web_reference
+    priority: medium
+    ingest_status: reference_only
+    accessed_year: 2026
+    notes: Broad overview and bibliography seed; not usable as authorial voice.
+
+  - id: joseph-smith-papers-parley-pratt
+    title: Parley Parker Pratt - Joseph Smith Papers
+    author: Joseph Smith Papers Project
+    source_type: context
+    genre: reference_biography
+    url: https://www.josephsmithpapers.org/person/parley-parker-pratt
+    rights: open_web_reference
+    priority: medium
+    ingest_status: reference_only
+    accessed_year: 2026
+
+  - id: byu-studies-murder-of-parley-pratt-1975
+    title: Eleanor McLean and the Murder of Parley P. Pratt
+    author: Steven Pratt
+    publication_year: 1975
+    source_type: secondary
+    genre: journal_article
+    url: https://byustudies.byu.edu/
+    rights: journal_reference
+    priority: medium
+    ingest_status: reference_only
+    notes: >-
+      Useful for later contextual work on Pratt's death and family situation,
+      but should remain separate from the primary corpus.

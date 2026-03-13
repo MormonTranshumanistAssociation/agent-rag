@@ -1,0 +1,115 @@
+# Ingestion Workflow
+
+This repository is optimized for **careful historical corpus building**, not one-click scraping.
+
+## Guiding rule
+
+Do not treat “downloaded text” as “clean corpus text.”
+
+A source only becomes part of the retrieval corpus after it has:
+
+1. been identified,
+2. been classified,
+3. been documented in `sources.yaml`,
+4. been reviewed by a human, and
+5. been written into `clean/` with traceable metadata.
+
+## Workflow for a new subject
+
+### 1. Create a subject folder
+
+```text
+subjects/<slug>/
+```
+
+Add:
+
+- `profile.yaml`
+- `aliases.yaml`
+- `sources.yaml`
+- `notes.md`
+
+### 2. Build the initial source registry
+
+Start with a small list of high-value sources:
+
+- core primary works
+- one or two trusted secondary sources
+- one or two context/reference pages
+
+### 3. Capture raw material
+
+Keep raw scans, OCR output, or downloaded text outside the final clean corpus until reviewed.
+
+Suggested future layout:
+
+```text
+raw/
+  scans/
+  ocr/
+  transcripts/
+```
+
+### 4. Produce clean text documents
+
+Write or copy reviewed corpus text into `clean/`.
+
+Suggested subfolders:
+
+```text
+clean/
+  primary/
+  secondary/
+  context/
+```
+
+Each clean Markdown file should include YAML front matter linking it back to a `source_id`.
+
+### 5. Validate the pack
+
+```bash
+PYTHONPATH=src python -m agent_rag.cli validate subjects/<slug>
+```
+
+### 6. Build exports
+
+```bash
+PYTHONPATH=src python -m agent_rag.cli build \
+  subjects/<slug> \
+  --output-dir subjects/<slug>/exports \
+  --chunk-size 700 \
+  --chunk-overlap 120
+```
+
+### 7. Inspect outputs manually
+
+Check:
+
+- metadata looks correct
+- chunk text is readable
+- source IDs are preserved
+- generated chunks do not blend unrelated texts
+
+## What belongs in `notes.md`
+
+Use `notes.md` for:
+
+- research priorities
+- unresolved source questions
+- ambiguity around editions or attribution
+- warnings about OCR quality
+- ideas for future ingestion
+
+Do **not** treat `notes.md` as corpus text.
+
+## Current limitations
+
+The current bootstrap does not yet automate:
+
+- web ingestion
+- OCR
+- citation extraction from scans
+- edition reconciliation
+- de-duplication across overlapping editions
+
+That is intentional. The goal is to establish trustworthy ground truth before automating more aggressively.

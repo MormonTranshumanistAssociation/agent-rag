@@ -1,0 +1,10 @@
+{
+  "subject_id": "parley-p-pratt",
+  "subject_name": "Parley P. Pratt",
+  "alias_count": 4,
+  "source_count": 10,
+  "document_count": 3,
+  "chunk_count": 8,
+  "chunk_size": 700,
+  "chunk_overlap": 120
+}
