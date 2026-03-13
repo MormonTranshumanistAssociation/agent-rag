@@ -23,10 +23,11 @@ sources:
     url: https://archive.org/details/mormonismunveile01prat
     rights: public_domain
     priority: medium
-    ingest_status: ocr_review_prepared
+    ingest_status: first_pass_ocr_ingested
     notes: >-
-      Archive.org OCR text staged under raw/ocr/ and raw/review/ for conservative
-      proofing before clean ingestion.
+      Archive.org OCR text staged under raw/ocr/ and raw/review/, then ingested as
+      a conservative first-pass whole-work clean document. Suitable for retrieval,
+      but should receive a later second proofread and possible finer segmentation.
 
   - id: millennium-and-other-poems-1840
     title: The Millennium and Other Poems
