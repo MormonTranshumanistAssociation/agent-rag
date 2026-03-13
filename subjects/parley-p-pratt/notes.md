@@ -59,5 +59,6 @@ This is a much stronger bootstrap than the earlier seed excerpts, but it is stil
 - ingest *Late Persecutions* as a historical-narrative counterpoint once a clean OCR/text workflow is in place
 - add poetry/hymn material to widen stylistic coverage
 - ingest *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* from clean text or reviewed OCR
+- use `raw/ocr/` + `raw/review/` as the staging area for remaining scan-driven works
 - introduce explicit edition metadata fields
 - add duplicate-detection across overlapping editions
