@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 from typing import Sequence
 
+from .export_targets import DEFAULT_EXPORT_TARGETS, EXPORT_TARGETS
 from .subject_pack import build_subject_pack, validate_subject_pack
 
 
@@ -14,11 +15,22 @@ def _build_parser() -> argparse.ArgumentParser:
     validate_parser = subparsers.add_parser("validate", help="Validate a subject pack")
     validate_parser.add_argument("subject_dir", type=Path)
 
-    build_parser = subparsers.add_parser("build", help="Build corpus and chunk exports for a subject pack")
+    build_parser = subparsers.add_parser("build", help="Build canonical corpus outputs and target packages for a subject pack")
     build_parser.add_argument("subject_dir", type=Path)
     build_parser.add_argument("--output-dir", type=Path, default=None)
     build_parser.add_argument("--chunk-size", type=int, default=900)
     build_parser.add_argument("--chunk-overlap", type=int, default=120)
+    build_parser.add_argument(
+        "--target",
+        action="append",
+        dest="targets",
+        choices=sorted(EXPORT_TARGETS),
+        default=None,
+        help=(
+            "Limit provider-specific package generation to the named target(s). "
+            f"Defaults to recommended targets: {', '.join(DEFAULT_EXPORT_TARGETS)}"
+        ),
+    )
 
     return parser
 
@@ -44,6 +56,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             output_dir=args.output_dir,
             chunk_size=args.chunk_size,
             chunk_overlap=args.chunk_overlap,
+            targets=args.targets,
         )
         print(
             f"Built subject pack {result.subject_id} -> {result.output_dir} "

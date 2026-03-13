@@ -26,7 +26,8 @@ Bootstrap v0.1 includes:
 - a documented repository layout
 - a minimal Python package + CLI
 - validation for subject packs
-- chunk export generation for local clean texts
+- canonical corpus + chunk export generation for local clean texts
+- target-ready export packages for **ElevenLabs** and **Amazon Bedrock**
 - a first curated subject pack for **Parley P. Pratt**
 - public-domain seed excerpts from Parley's writings
 - pytest coverage and a GitHub Actions CI workflow
@@ -43,6 +44,7 @@ agent-rag/
       aliases.yaml
       sources.yaml
       notes.md
+      prompts/
       clean/
       exports/
   tests/
@@ -117,9 +119,12 @@ agent-rag build \
 
 Outputs:
 
-- `manifest.json` — summary counts and build settings
+- `manifest.json` — summary counts and build settings for the canonical corpus
 - `corpus.jsonl` — one record per clean document
 - `chunks.jsonl` — retrieval-ready text chunks with metadata
+- `prompts/system.md` — recommended system prompt describing source-handling values
+- `targets/elevenlabs/` — document-oriented package for ElevenLabs native narration/RAG
+- `targets/bedrock/` — chunk-oriented package for Bedrock or similar cloud-native retrieval backends
 
 ## Subject-pack model
 
@@ -131,8 +136,41 @@ Core files:
 - `aliases.yaml` — known variant names
 - `sources.yaml` — curated source registry
 - `notes.md` — human research notes, priorities, and caveats
+- `prompts/` — optional human-authored prompt files for downstream agents
 - `clean/` — local clean texts used to build exports
 - `exports/` — generated JSON/JSONL output
+
+## Integration target strategy
+
+`agent-rag` now treats the export pipeline as a two-layer system:
+
+1. **Canonical corpus outputs** (`manifest.json`, `corpus.jsonl`, `chunks.jsonl`) remain the source of truth.
+2. **Target packages** under `exports/targets/<target>/` reshape that canonical corpus for downstream systems.
+
+Current target priority:
+
+- **Primary target:** ElevenLabs native narration + native RAG/knowledge workflows
+- **Secondary target:** AWS/Bedrock-style cloud-native retrieval infrastructure
+- **Later optional targets:** specialized vector databases only if they provide an essential missing capability
+
+Use `--target` to limit a build to specific targets:
+
+```bash
+agent-rag build subjects/parley-p-pratt --target elevenlabs
+```
+
+## Prompt values
+
+The recommended system prompt generated into `exports/prompts/system.md` should encode the same corpus values as the data pipeline itself:
+
+- prefer primary texts when presenting the subject's voice or beliefs
+- distinguish primary, secondary, and context materials explicitly
+- cite provenance whenever possible
+- preserve chronology and edition boundaries
+- surface uncertainty instead of smoothing over conflicts
+- never invent quotations or citations
+
+If a subject pack includes `subjects/<slug>/prompts/system.md`, that authored prompt is copied through verbatim; otherwise a default prompt is generated from subject metadata. See `docs/prompting.md` for the prompt convention.
 
 ## Design principles
 
@@ -141,6 +179,7 @@ Core files:
 - **Every exported chunk carries source metadata.**
 - **Human-editable manifests are preferred over opaque ingestion.**
 - **The pipeline should remain easy to inspect and repair.**
+- **Canonical exports should outlive any single retrieval vendor.**
 
 ## Near-term roadmap
 

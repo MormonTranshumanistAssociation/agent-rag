@@ -205,3 +205,112 @@ def test_build_subject_pack_exports_corpus_and_chunks(subject_dir: Path, tmp_pat
     assert all(chunk["subject_id"] == "parley-p-pratt" for chunk in chunk_lines)
     assert all(chunk["source_id"] == "voice-of-warning-1837" for chunk in chunk_lines)
     assert chunk_lines[0]["chunk_id"] == "voice-of-warning-preface:0"
+
+
+def test_build_subject_pack_exports_default_elevenlabs_and_bedrock_targets(subject_dir: Path, tmp_path: Path) -> None:
+    output_dir = tmp_path / "build"
+
+    build_subject_pack(subject_dir, output_dir=output_dir, chunk_size=120, chunk_overlap=20)
+
+    elevenlabs_dir = output_dir / "targets" / "elevenlabs"
+    bedrock_dir = output_dir / "targets" / "bedrock"
+    elevenlabs_manifest = json.loads((elevenlabs_dir / "manifest.json").read_text(encoding="utf-8"))
+    elevenlabs_lines = [
+        json.loads(line)
+        for line in (elevenlabs_dir / "documents.jsonl").read_text(encoding="utf-8").splitlines()
+        if line
+    ]
+    bedrock_manifest = json.loads((bedrock_dir / "manifest.json").read_text(encoding="utf-8"))
+    bedrock_lines = [
+        json.loads(line)
+        for line in (bedrock_dir / "chunks.jsonl").read_text(encoding="utf-8").splitlines()
+        if line
+    ]
+
+    assert elevenlabs_manifest["target"] == "elevenlabs"
+    assert elevenlabs_manifest["recommended_ingestion_unit"] == "document"
+    assert elevenlabs_manifest["recommended_system_prompt"] == "../../prompts/system.md"
+    assert elevenlabs_manifest["record_count"] == 1
+    assert elevenlabs_lines[0]["id"] == "voice-of-warning-preface"
+    assert elevenlabs_lines[0]["metadata"]["source_id"] == "voice-of-warning-1837"
+    assert elevenlabs_lines[0]["metadata"]["source_url"] == "https://www.gutenberg.org/ebooks/35554"
+
+    assert bedrock_manifest["target"] == "bedrock"
+    assert bedrock_manifest["recommended_ingestion_unit"] == "chunk"
+    assert bedrock_manifest["record_count"] == len(bedrock_lines)
+    assert bedrock_lines[0]["id"] == "voice-of-warning-preface:0"
+    assert bedrock_lines[0]["metadata"]["document_id"] == "voice-of-warning-preface"
+    assert bedrock_lines[0]["metadata"]["source_id"] == "voice-of-warning-1837"
+
+
+def test_build_subject_pack_removes_stale_target_outputs_on_rebuild(subject_dir: Path, tmp_path: Path) -> None:
+    output_dir = tmp_path / "build"
+
+    build_subject_pack(subject_dir, output_dir=output_dir, chunk_size=120, chunk_overlap=20)
+    build_subject_pack(subject_dir, output_dir=output_dir, chunk_size=120, chunk_overlap=20, targets=["elevenlabs"])
+
+    assert (output_dir / "targets" / "elevenlabs" / "manifest.json").exists()
+    assert not (output_dir / "targets" / "bedrock").exists()
+
+
+def test_build_subject_pack_rejects_unknown_targets_before_writing_outputs(subject_dir: Path, tmp_path: Path) -> None:
+    output_dir = tmp_path / "build"
+
+    with pytest.raises(ValueError, match="Unknown export target"):
+        build_subject_pack(subject_dir, output_dir=output_dir, targets=["bogus"])
+
+    assert not output_dir.exists()
+
+
+def test_build_subject_pack_generates_default_system_prompt(subject_dir: Path, tmp_path: Path) -> None:
+    output_dir = tmp_path / "build"
+
+    build_subject_pack(subject_dir, output_dir=output_dir, chunk_size=120, chunk_overlap=20)
+
+    system_prompt = (output_dir / "prompts" / "system.md").read_text(encoding="utf-8")
+
+    assert "Parley P. Pratt" in system_prompt
+    assert "Prefer primary sources" in system_prompt
+    assert "Surface uncertainty" in system_prompt
+    assert "Do not invent quotations" in system_prompt
+
+
+def test_build_subject_pack_copies_authored_system_prompt(subject_dir: Path, tmp_path: Path) -> None:
+    output_dir = tmp_path / "build"
+    prompts_dir = subject_dir / "prompts"
+    prompts_dir.mkdir(parents=True)
+    (prompts_dir / "system.md").write_text("Custom system prompt\n", encoding="utf-8")
+
+    build_subject_pack(subject_dir, output_dir=output_dir, chunk_size=120, chunk_overlap=20)
+
+    assert (output_dir / "prompts" / "system.md").read_text(encoding="utf-8") == "Custom system prompt\n"
+
+
+def test_build_subject_pack_rejects_output_dir_that_overlaps_source_prompts(subject_dir: Path) -> None:
+    prompts_dir = subject_dir / "prompts"
+    prompts_dir.mkdir(parents=True)
+    system_prompt_path = prompts_dir / "system.md"
+    system_prompt_path.write_text("Custom system prompt\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="overlaps the subject prompt directory"):
+        build_subject_pack(subject_dir, output_dir=subject_dir)
+
+    assert system_prompt_path.read_text(encoding="utf-8") == "Custom system prompt\n"
+
+
+def test_build_subject_pack_rejects_output_dir_overlap_even_without_source_prompts(subject_dir: Path) -> None:
+    with pytest.raises(ValueError, match="overlaps the subject prompt directory"):
+        build_subject_pack(subject_dir, output_dir=subject_dir)
+
+    assert not (subject_dir / "prompts").exists()
+
+
+def test_build_subject_pack_rejects_output_dir_nested_under_source_prompts(subject_dir: Path) -> None:
+    prompts_dir = subject_dir / "prompts"
+    prompts_dir.mkdir(parents=True)
+    nested_output_dir = prompts_dir / "build"
+
+    with pytest.raises(ValueError, match="overlaps the subject prompt directory"):
+        build_subject_pack(subject_dir, output_dir=nested_output_dir)
+
+    assert not nested_output_dir.exists()

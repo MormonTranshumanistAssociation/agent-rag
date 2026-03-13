@@ -28,6 +28,7 @@ Add:
 - `aliases.yaml`
 - `sources.yaml`
 - `notes.md`
+- optional `prompts/` files if you already know the downstream agent values you want to preserve
 
 ### 2. Build the initial source registry
 
@@ -65,13 +66,27 @@ clean/
 
 Each clean Markdown file should include YAML front matter linking it back to a `source_id`.
 
-### 5. Validate the pack
+### 5. Author or review agent prompts
+
+If the downstream experience depends on stable behavioral values, encode them in `prompts/system.md`.
+
+Recommended values to state explicitly:
+
+- prefer primary sources for the subject's own voice
+- distinguish primary, secondary, and context materials
+- cite provenance and avoid invented quotations
+- preserve chronology and edition boundaries
+- surface uncertainty when sources conflict
+
+If no authored prompt is present, `agent-rag build` will generate a default `exports/prompts/system.md` from subject metadata.
+
+### 6. Validate the pack
 
 ```bash
 PYTHONPATH=src python -m agent_rag.cli validate subjects/<slug>
 ```
 
-### 6. Build exports
+### 7. Build exports
 
 ```bash
 PYTHONPATH=src python -m agent_rag.cli build \
@@ -81,11 +96,28 @@ PYTHONPATH=src python -m agent_rag.cli build \
   --chunk-overlap 120
 ```
 
-### 7. Inspect outputs manually
+By default this now produces:
+
+- the canonical provenance-first corpus outputs,
+- an ElevenLabs-oriented document package, and
+- a Bedrock/cloud-native chunk package.
+
+If you only want one downstream package, specify `--target` explicitly:
+
+```bash
+PYTHONPATH=src python -m agent_rag.cli build \
+  subjects/<slug> \
+  --output-dir subjects/<slug>/exports \
+  --target elevenlabs
+```
+
+### 8. Inspect outputs manually
 
 Check:
 
-- metadata looks correct
+- canonical metadata looks correct
+- ElevenLabs target records preserve document-level provenance and citation URLs
+- Bedrock/cloud target records preserve chunk-level metadata
 - chunk text is readable
 - source IDs are preserved
 - generated chunks do not blend unrelated texts

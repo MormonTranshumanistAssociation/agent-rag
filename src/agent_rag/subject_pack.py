@@ -8,7 +8,9 @@ from typing import Any, Dict, Iterable, List, Tuple
 import yaml
 
 from .chunking import chunk_text, normalize_text
+from .export_targets import resolve_export_targets, write_target_exports
 from .models import BuildResult, DocumentRecord, SourceRecord, SubjectPack, SubjectProfile, VALID_SOURCE_TYPES
+from .prompt_templates import validate_prompt_output_path, write_prompt_exports
 
 
 REQUIRED_PROFILE_FIELDS = {"id", "display_name", "canonical_name", "summary"}
@@ -279,19 +281,23 @@ def build_subject_pack(
     output_dir: Path | str | None = None,
     chunk_size: int = 900,
     chunk_overlap: int = 120,
+    targets: Iterable[str] | None = None,
 ) -> BuildResult:
+    resolved_targets = resolve_export_targets(targets)
     errors = validate_subject_pack(subject_dir)
     if errors:
         raise ValueError("Subject pack validation failed: " + "; ".join(errors))
 
     pack = load_subject_pack(subject_dir)
-    destination = Path(output_dir) if output_dir is not None else Path(subject_dir) / "exports"
+    subject_path = Path(subject_dir)
+    destination = Path(output_dir) if output_dir is not None else subject_path / "exports"
+    validate_prompt_output_path(subject_path, destination)
     destination.mkdir(parents=True, exist_ok=True)
 
     corpus_records: List[Dict[str, Any]] = []
     chunk_records: List[Dict[str, Any]] = []
 
-    subject_path = Path(subject_dir)
+    write_prompt_exports(subject_path, destination, pack)
     for document in pack.documents:
         source = pack.sources[document.source_id]
         corpus_record = {
@@ -342,11 +348,13 @@ def build_subject_pack(
         "chunk_count": len(chunk_records),
         "chunk_size": chunk_size,
         "chunk_overlap": chunk_overlap,
+        "system_prompt": "prompts/system.md",
     }
 
     (destination / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     _write_jsonl(destination / "corpus.jsonl", corpus_records)
     _write_jsonl(destination / "chunks.jsonl", chunk_records)
+    write_target_exports(destination, corpus_records=corpus_records, chunk_records=chunk_records, targets=resolved_targets)
 
     return BuildResult(
         subject_id=pack.profile.id,

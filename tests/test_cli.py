@@ -76,3 +76,34 @@ def test_cli_validate_and_build(tmp_path: Path, capsys) -> None:
     assert "Built subject pack" in captured.out
     assert manifest["subject_id"] == "parley-p-pratt"
     assert manifest["chunk_count"] >= 2
+    assert manifest["system_prompt"] == "prompts/system.md"
+    assert (output_dir / "prompts" / "system.md").exists()
+    assert (output_dir / "targets" / "elevenlabs" / "manifest.json").exists()
+    assert (output_dir / "targets" / "bedrock" / "manifest.json").exists()
+
+
+def test_cli_build_accepts_explicit_targets(tmp_path: Path, capsys) -> None:
+    subject_dir = make_subject_pack(tmp_path)
+    output_dir = tmp_path / "exports"
+
+    build_exit = main(
+        [
+            "build",
+            str(subject_dir),
+            "--output-dir",
+            str(output_dir),
+            "--chunk-size",
+            "80",
+            "--chunk-overlap",
+            "10",
+            "--target",
+            "elevenlabs",
+        ]
+    )
+
+    captured = capsys.readouterr()
+
+    assert build_exit == 0
+    assert "Built subject pack" in captured.out
+    assert (output_dir / "targets" / "elevenlabs" / "manifest.json").exists()
+    assert not (output_dir / "targets" / "bedrock" / "manifest.json").exists()
