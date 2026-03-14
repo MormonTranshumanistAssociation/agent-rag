@@ -200,26 +200,55 @@ def _apply_terminal_punctuation(text: str, punctuation: str) -> str:
     return f"{body}{punctuation}{trailer}"
 
 
-def _repair_sentence_terminal_punctuation(lines: list[str]) -> list[str]:
-    repaired: list[str] = []
-    for index, line in enumerate(lines):
-        current = line.strip()
+def _looks_like_sentence_boundary(current: str, next_line: str) -> bool:
+    match = _SENTENCE_END_RE.fullmatch(current.strip())
+    if not match:
+        return False
+
+    terminal = match.group("terminal") or ""
+    body = match.group("body").rstrip()
+    if not terminal:
+        return False
+    if terminal in ";:":
+        return False
+    if terminal == ".":
+        if re.search(r"\b(?:Mr|Mrs|Ms|Dr|Rev|St|Sec|No|Gen|Gov|Col|Capt|Lt|Maj|Sgt|Hon|Jr|Sr|Esq)\.$", body):
+            return False
+        if re.search(r"\b[A-Z]\.$", body):
+            return False
+    if next_line and not _SENTENCE_START_RE.match(next_line):
+        return False
+    return True
+
+
+def _reconstruct_sentence_candidates(lines: list[str]) -> list[str]:
+    candidates: list[str] = []
+    current = ""
+
+    for raw_line in lines:
+        line = raw_line.strip()
+        if not line:
+            continue
         if not current:
+            current = line
             continue
+        if _looks_like_sentence_boundary(current, line):
+            candidates.append(current)
+            current = line
+        else:
+            current = f"{current} {line}"
 
-        next_line = next((candidate.strip() for candidate in lines[index + 1 :] if candidate.strip()), "")
-        force = _infer_sentence_force(current)
-        if force == "statement":
-            repaired.append(current)
-            continue
+    if current:
+        candidates.append(current)
+    return candidates
 
-        if next_line and not _SENTENCE_START_RE.match(next_line):
-            repaired.append(current)
-            continue
 
-        punctuation = "?" if force == "question" else "!"
-        repaired.append(_apply_terminal_punctuation(current, punctuation))
-    return repaired
+def _repair_sentence_terminal_punctuation(sentence: str) -> str:
+    force = _infer_sentence_force(sentence)
+    if force == "statement":
+        return sentence
+    punctuation = "?" if force == "question" else "!"
+    return _apply_terminal_punctuation(sentence, punctuation)
 
 
 def _normalize_typography(text: str) -> str:
@@ -268,8 +297,9 @@ def normalize_ocr_text(text: str, preserve_linebreaks: bool = False) -> str:
         lines = [re.sub(r"\s+", " ", line.strip()) for line in paragraph.split("\n") if line.strip()]
         if not lines:
             continue
-        repaired_lines = _repair_sentence_terminal_punctuation(lines)
-        cleaned.append(" ".join(repaired_lines))
+        sentence_candidates = _reconstruct_sentence_candidates(lines)
+        repaired_sentences = [_repair_sentence_terminal_punctuation(sentence) for sentence in sentence_candidates]
+        cleaned.append(" ".join(repaired_sentences))
 
     if not cleaned:
         return ""

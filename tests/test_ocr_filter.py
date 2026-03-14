@@ -68,12 +68,12 @@ def test_normalize_ocr_text_keeps_terminal_digit_one_when_context_is_not_interro
     assert normalized == 'Section 1 And this paragraph continues without a question.\n'
 
 
-def test_normalize_ocr_text_infers_question_mark_from_sentence_shape_without_glyph_hint() -> None:
+def test_normalize_ocr_text_infers_question_mark_after_reconstructing_wrapped_sentence() -> None:
     raw_text = 'Who can behold such scenes of horror\nAnd call it justice.\n'
 
     normalized = normalize_ocr_text(raw_text)
 
-    assert normalized == 'Who can behold such scenes of horror? And call it justice.\n'
+    assert normalized == 'Who can behold such scenes of horror And call it justice?\n'
 
 
 def test_find_ocr_issues_flags_spelling_and_punctuation_suspicions() -> None:
