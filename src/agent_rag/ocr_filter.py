@@ -76,11 +76,12 @@ _PAGE_ARTIFACT_RE = re.compile(r"^\(?\s*\d+\s*\)?$")
 _HONORIFIC_SPACING_RE = re.compile(r"\b(Mr|Mrs|Ms|Dr|Rev|St|Sec|No)[,.]\s*([A-Z])\.")
 _PUNCTUATION_NOISE_RE = re.compile(r"\b\S*[\^*_«»]+\S*\b")
 _ROMAN_RE = re.compile(r"^[IVXLCDM]+$", re.I)
-_TERMINAL_ONE_RE = re.compile(r"(?<!\w)1(?=(?:[\"')\]”’]*)?(?:\s+|$))")
-_INTERROGATIVE_CUE_RE = re.compile(
-    r"\b(?:who|what|when|where|why|how|did|do|does|is|are|was|were|have|has|had|can|could|would|should|will|shall)\b",
-    re.I,
+_SENTENCE_END_RE = re.compile(r'^(?P<body>.*?)(?P<terminal>[1Il|7.;:!?])?(?P<trailer>["\')\]”’]*)$')
+_SENTENCE_START_RE = re.compile(r'^["“‘(\[]?[A-Z]')
+_QUESTION_SEGMENT_RE = re.compile(
+    r'(?i)(?:^|[;:—]\s+|\b(?:but|and|or|nor|yet)\b\s+)(?:who|what|when|where|why|how)\b|(?:^|[;:—]\s+|\b(?:but|and|or|nor|yet)\b\s+)(?:do|does|did|is|are|was|were|have|has|had|can|could|would|should|will|shall|may|might|must)\b'
 )
+_EXCLAMATION_SEGMENT_RE = re.compile(r'(?i)^(?:["“‘(\[]*)?(?:o\b|what\s+(?:a|an)\b|how\s+\w+)')
 
 _SPELLCHECKER = SpellChecker(distance=2)
 
@@ -173,33 +174,52 @@ def _smartify_quotes(text: str) -> str:
     return "".join(result)
 
 
-def _repair_terminal_digit_one_questions(text: str) -> str:
-    repaired: list[str] = []
-    last_index = 0
+def _infer_sentence_force(text: str) -> str:
+    normalized = re.sub(r"\s+", " ", text.strip())
+    if not normalized:
+        return "statement"
+    normalized = normalized.translate(_QUOTE_NORMALIZATION)
+    if _QUESTION_SEGMENT_RE.search(normalized):
+        return "question"
+    if _EXCLAMATION_SEGMENT_RE.search(normalized):
+        return "exclamation"
+    return "statement"
 
-    for match in _TERMINAL_ONE_RE.finditer(text):
-        index = match.start()
-        previous_nonspace = next((text[pos] for pos in range(index - 1, -1, -1) if not text[pos].isspace()), "")
-        if previous_nonspace and not (previous_nonspace.isalpha() or previous_nonspace in '”’"\')]}'):
-            continue
 
-        next_nonspace = next((text[pos] for pos in range(index + 1, len(text)) if not text[pos].isspace()), "")
-        if next_nonspace and not (next_nonspace.isupper() or next_nonspace in '”’"\')]}'):
-            continue
-
-        clause_start = max(text.rfind(marker, 0, index) for marker in (".", "?", "!", "\n"))
-        clause = text[clause_start + 1 : index].strip()
-        if not clause or not _INTERROGATIVE_CUE_RE.search(clause):
-            continue
-
-        repaired.append(text[last_index:index])
-        repaired.append("?")
-        last_index = index + 1
-
-    if last_index == 0:
+def _apply_terminal_punctuation(text: str, punctuation: str) -> str:
+    match = _SENTENCE_END_RE.fullmatch(text.strip())
+    if not match:
         return text
-    repaired.append(text[last_index:])
-    return "".join(repaired)
+    body = match.group("body").rstrip()
+    terminal = match.group("terminal") or ""
+    trailer = match.group("trailer") or ""
+    if terminal == punctuation:
+        return f"{body}{terminal}{trailer}"
+    if terminal:
+        return f"{body}{punctuation}{trailer}"
+    return f"{body}{punctuation}{trailer}"
+
+
+def _repair_sentence_terminal_punctuation(lines: list[str]) -> list[str]:
+    repaired: list[str] = []
+    for index, line in enumerate(lines):
+        current = line.strip()
+        if not current:
+            continue
+
+        next_line = next((candidate.strip() for candidate in lines[index + 1 :] if candidate.strip()), "")
+        force = _infer_sentence_force(current)
+        if force == "statement":
+            repaired.append(current)
+            continue
+
+        if next_line and not _SENTENCE_START_RE.match(next_line):
+            repaired.append(current)
+            continue
+
+        punctuation = "?" if force == "question" else "!"
+        repaired.append(_apply_terminal_punctuation(current, punctuation))
+    return repaired
 
 
 def _normalize_typography(text: str) -> str:
@@ -207,8 +227,6 @@ def _normalize_typography(text: str) -> str:
     text = re.sub(r"(?<=\w)——+(?=\w)", "—", text)
     text = re.sub(r"\s+([,.;:!?])", r"\1", text)
     text = re.sub(r"\s+—\s+", " — ", text)
-    text = _repair_terminal_digit_one_questions(text)
-    text = re.sub(r"\s+([,.;:!?])", r"\1", text)
     text = _smartify_quotes(text)
     text = re.sub(r"(?<=[A-Za-z0-9,.;:!?])“", " “", text)
     text = re.sub(r"”(?=[A-Za-z0-9])", "” ", text)
@@ -250,7 +268,8 @@ def normalize_ocr_text(text: str, preserve_linebreaks: bool = False) -> str:
         lines = [re.sub(r"\s+", " ", line.strip()) for line in paragraph.split("\n") if line.strip()]
         if not lines:
             continue
-        cleaned.append(" ".join(lines))
+        repaired_lines = _repair_sentence_terminal_punctuation(lines)
+        cleaned.append(" ".join(repaired_lines))
 
     if not cleaned:
         return ""
