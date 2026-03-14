@@ -1,0 +1,138 @@
+{
+  "issue_count": 19,
+  "issues": [
+    {
+      "line_number": 15,
+      "token": "Jands.",
+      "category": "proper_noun_or_archaism",
+      "suggestion": "Hands",
+      "context": "Its mightiest works—to excel all other Jands.<br>"
+    },
+    {
+      "line_number": 17,
+      "token": "O’erlook",
+      "category": "proper_noun_or_archaism",
+      "suggestion": "Overlook",
+      "context": "O’erlook the clouds, and tower amid the skies,; Their lofty summits bid defiance bold,"
+    },
+    {
+      "line_number": 20,
+      "token": "Himmaleh",
+      "category": "proper_noun_or_archaism",
+      "suggestion": "Himmler",
+      "context": "‘Tis true Himmaleh, (Asia’s highest peak,)<br>"
+    },
+    {
+      "line_number": 29,
+      "token": "Himmaleh",
+      "category": "proper_noun_or_archaism",
+      "suggestion": "Himmler",
+      "context": "And cast Himmaleh, humbled, to the ground.<br>"
+    },
+    {
+      "line_number": 53,
+      "token": "meads",
+      "category": "likely_spelling_error",
+      "suggestion": "means",
+      "context": "Through fertile vales—the flowery meads along,<br>"
+    },
+    {
+      "line_number": 66,
+      "token": "Jarge",
+      "category": "proper_noun_or_archaism",
+      "suggestion": "Large",
+      "context": "Receiving still Jarge rivers as it goes,<br>"
+    },
+    {
+      "line_number": 76,
+      "token": "Longside",
+      "category": "proper_noun_or_archaism",
+      "suggestion": "Alongside",
+      "context": "“Longside Missouri’s tide how short they seem!<br>"
+    },
+    {
+      "line_number": 77,
+      "token": "outvie",
+      "category": "likely_spelling_error",
+      "suggestion": "outside",
+      "context": "Our cataracts too, in grandeur far outvie,<br>"
+    },
+    {
+      "line_number": 79,
+      "token": "_",
+      "category": "ocr_punctuation_noise",
+      "suggestion": null,
+      "context": "_ See grand Niagara’s stream majestic glide,<br>"
+    },
+    {
+      "line_number": 91,
+      "token": "veil’d",
+      "category": "likely_spelling_error",
+      "suggestion": "veiled",
+      "context": "Now veil’d in clouds—now bursting to the view<br>"
+    },
+    {
+      "line_number": 92,
+      "token": "modosty",
+      "category": "likely_spelling_error",
+      "suggestion": "modesty",
+      "context": "In blushing modosty, the dance renew;<br>"
+    },
+    {
+      "line_number": 100,
+      "token": "Tequendama’s",
+      "category": "proper_noun_or_archaism",
+      "suggestion": null,
+      "context": "Or turn to Tequendama’s awful steep,<br>"
+    },
+    {
+      "line_number": 101,
+      "token": "Bogota’s",
+      "category": "proper_noun_or_archaism",
+      "suggestion": "Bogotá",
+      "context": "See wild Bogota’s waters boldy leap,<br>"
+    },
+    {
+      "line_number": 101,
+      "token": "boldy",
+      "category": "likely_spelling_error",
+      "suggestion": "body",
+      "context": "See wild Bogota’s waters boldy leap,<br>"
+    },
+    {
+      "line_number": 103,
+      "token": "sofi",
+      "category": "likely_spelling_error",
+      "suggestion": "soft",
+      "context": "To flowery plains, where spring’s sofi breezes blow:<br>"
+    },
+    {
+      "line_number": 104,
+      "token": "unrival’d",
+      "category": "likely_spelling_error",
+      "suggestion": "unrivaled",
+      "context": "‘Mid scenes of majesty unrival’d stand,<br>"
+    },
+    {
+      "line_number": 130,
+      "token": "Renew’d",
+      "category": "proper_noun_or_archaism",
+      "suggestion": "Renewed",
+      "context": "Renew’d in fresliness sheds a sweet perfume;<br>"
+    },
+    {
+      "line_number": 130,
+      "token": "fresliness",
+      "category": "likely_spelling_error",
+      "suggestion": "freshness",
+      "context": "Renew’d in fresliness sheds a sweet perfume;<br>"
+    },
+    {
+      "line_number": 132,
+      "token": "flowrets",
+      "category": "likely_spelling_error",
+      "suggestion": "florets",
+      "context": "Adorned with flowrets bright:—O, lovely scene!<br>"
+    }
+  ]
+}
