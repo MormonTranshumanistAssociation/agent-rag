@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from agent_rag.cli import main
-from agent_rag.ocr_filter import normalize_ocr_text, prepare_ocr_review_packet
+from agent_rag.ocr_filter import find_ocr_issues, normalize_ocr_text, prepare_ocr_review_packet
 
 
 def test_normalize_ocr_text_fixes_ligatures_and_unwraps_prose() -> None:
@@ -33,6 +33,26 @@ def test_normalize_ocr_text_fixes_common_ocr_debris_patterns() -> None:
     assert normalized == 'Mr. S. said " interpretation should be cleaned. Mr. S. agreed.\n'
 
 
+def test_find_ocr_issues_flags_spelling_and_punctuation_suspicions() -> None:
+    text = "Mr.S. said the fales prophet used in«-terpretation.\nGibralter was mentioned too.\n"
+
+    issues = find_ocr_issues(text)
+
+    assert any(issue.token == "Mr.S." and issue.category == "honorific_spacing" and issue.suggestion == "Mr. S." for issue in issues)
+    assert any(issue.token == "fales" and issue.category == "likely_spelling_error" and issue.suggestion == "false" for issue in issues)
+    assert any(issue.token == "in«-terpretation" and issue.category == "ocr_punctuation_noise" and issue.suggestion == "interpretation" for issue in issues)
+    assert any(issue.token == "Gibralter" and issue.category == "proper_noun_or_archaism" for issue in issues)
+
+
+def test_find_ocr_issues_ignores_markdown_front_matter() -> None:
+    text = "---\ndocument_id: sample\nsource_id: source-1\n---\nMr.S. wrote fales text.\n"
+
+    issues = find_ocr_issues(text)
+
+    assert all(issue.line_number > 4 for issue in issues)
+    assert not any(issue.context.startswith("document_id:") for issue in issues)
+
+
 def test_prepare_ocr_review_packet_writes_normalized_text_candidate_and_prompt(tmp_path: Path) -> None:
     input_path = tmp_path / "raw.txt"
     input_path.write_text("Mis-\ntaken ﬂowers bloom.\n", encoding="utf-8")
@@ -52,6 +72,8 @@ def test_prepare_ocr_review_packet_writes_normalized_text_candidate_and_prompt(t
     normalized_text = (output_dir / "normalized.txt").read_text(encoding="utf-8")
     candidate_text = (output_dir / "candidate.md").read_text(encoding="utf-8")
     prompt_text = (output_dir / "proofread_prompt.md").read_text(encoding="utf-8")
+    lint_markdown = (output_dir / "lint_report.md").read_text(encoding="utf-8")
+    lint_json = (output_dir / "lint_report.json").read_text(encoding="utf-8")
 
     assert normalized_text == "Mistaken flowers bloom.\n"
     assert "document_id: late-persecutions-chapter-01" in candidate_text
@@ -60,6 +82,8 @@ def test_prepare_ocr_review_packet_writes_normalized_text_candidate_and_prompt(t
     assert "Do not modernize the prose" in prompt_text
     assert "Confidently normalize obvious OCR debris" in prompt_text
     assert "late-persecutions-chapter-01" in prompt_text
+    assert "No suspicious tokens detected" in lint_markdown
+    assert '"issue_count": 0' in lint_json
 
 
 def test_cli_prepare_ocr_writes_review_packet(tmp_path: Path) -> None:
@@ -91,3 +115,5 @@ def test_cli_prepare_ocr_writes_review_packet(tmp_path: Path) -> None:
     assert (output_dir / "normalized.txt").read_text(encoding="utf-8") == "Poems remain.\n"
     assert (output_dir / "candidate.md").exists()
     assert (output_dir / "proofread_prompt.md").exists()
+    assert (output_dir / "lint_report.md").exists()
+    assert (output_dir / "lint_report.json").exists()
