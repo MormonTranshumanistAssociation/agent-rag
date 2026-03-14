@@ -9,6 +9,7 @@
 Proofread the normalized OCR text conservatively.
 
 - Correct obvious OCR mistakes only.
+- Confidently normalize obvious OCR debris instead of preserving meaningless noise verbatim.
 - Do not modernize the prose, spelling, punctuation, or theology.
 - Do not silently add content that is not supported by the source.
 - Mark genuinely uncertain readings with `[[unclear]]` instead of guessing.
