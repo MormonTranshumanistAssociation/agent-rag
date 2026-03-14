@@ -22,15 +22,23 @@ def test_normalize_ocr_text_can_preserve_linebreaks() -> None:
 
     normalized = normalize_ocr_text(raw_text, preserve_linebreaks=True)
 
-    assert normalized == "Roses are red,\nViolets are blue,\nfi ligatures appear here too.\n"
+    assert normalized == "Roses are red,<br>\nViolets are blue,<br>\nfi ligatures appear here too.\n"
 
 
 def test_normalize_ocr_text_fixes_common_ocr_debris_patterns() -> None:
-    raw_text = "Mr.S. said «' in«-\nterpretation ^ should be cleaned.\nMr, S. agreed.\n( 4 )\n"
+    raw_text = 'Mr.S. said " And in«-\nterpretation ^ should be cleaned ; why ?\nMr, S. agreed.\n( 4 )\n'
 
     normalized = normalize_ocr_text(raw_text)
 
-    assert normalized == 'Mr. S. said " interpretation should be cleaned. Mr. S. agreed.\n'
+    assert normalized == 'Mr. S. said “And interpretation should be cleaned; why? Mr. S. agreed.\n'
+
+
+def test_normalize_ocr_text_normalizes_dashes_and_smart_quotes() -> None:
+    raw_text = 'He cried, " Beware -— for d——d forms ! "\n'
+
+    normalized = normalize_ocr_text(raw_text)
+
+    assert normalized == 'He cried, “Beware — for d—d forms!”\n'
 
 
 def test_find_ocr_issues_flags_spelling_and_punctuation_suspicions() -> None:

@@ -131,6 +131,42 @@ def _is_allowed_word(token: str) -> bool:
     )
 
 
+def _smartify_quotes(text: str) -> str:
+    text = re.sub(r"(?<=\w)'(?=\w)", "’", text)
+    result: list[str] = []
+    double_open = True
+    for index, char in enumerate(text):
+        if char not in {'"', "'"}:
+            result.append(char)
+            continue
+
+        prev = text[index - 1] if index > 0 else ""
+        next_char = text[index + 1] if index + 1 < len(text) else ""
+        prev_nonspace = next((text[pos] for pos in range(index - 1, -1, -1) if not text[pos].isspace()), "")
+        next_nonspace = next((text[pos] for pos in range(index + 1, len(text)) if not text[pos].isspace()), "")
+        is_opening = bool(next_nonspace and next_nonspace.isalnum() and (not prev_nonspace or prev_nonspace in "([{—<,;:.!?"))
+        if char == '"':
+            result.append("“" if double_open else "”")
+            double_open = not double_open
+        else:
+            if prev.isalnum() and next_char.isalnum():
+                result.append("’")
+            else:
+                result.append("‘" if is_opening else "’")
+    return "".join(result)
+
+
+def _normalize_typography(text: str) -> str:
+    text = re.sub(r"-\s*—|—\s*-", " — ", text)
+    text = re.sub(r"(?<=\w)——+(?=\w)", "—", text)
+    text = re.sub(r"\s+([,;:!?])", r"\1", text)
+    text = re.sub(r"\s+—\s+", " — ", text)
+    text = _smartify_quotes(text)
+    text = re.sub(r"([“‘])\s+", r"\1", text)
+    text = re.sub(r"\s+([”’])", r"\1", text)
+    return text
+
+
 def normalize_ocr_text(text: str, preserve_linebreaks: bool = False) -> str:
     normalized = text.replace("\r\n", "\n").replace("\r", "\n").replace("\xad", "")
     normalized = normalized.translate(_QUOTE_NORMALIZATION)
@@ -148,8 +184,14 @@ def normalize_ocr_text(text: str, preserve_linebreaks: bool = False) -> str:
     normalized = re.sub(r"\n{3,}", "\n\n", normalized)
 
     if preserve_linebreaks:
-        lines = [line.rstrip() for line in normalized.split("\n")]
-        normalized = "\n".join(lines).strip()
+        stanzas = []
+        for stanza in re.split(r"\n\s*\n", normalized.strip()):
+            lines = [re.sub(r"\s+", " ", line.strip()) for line in stanza.split("\n") if line.strip()]
+            if not lines:
+                continue
+            stanzas.append("<br>\n".join(lines))
+        normalized = "\n\n".join(stanzas)
+        normalized = _normalize_typography(normalized).strip()
         return normalized + "\n" if normalized else ""
 
     paragraphs = re.split(r"\n\s*\n", normalized.strip())
@@ -162,7 +204,7 @@ def normalize_ocr_text(text: str, preserve_linebreaks: bool = False) -> str:
 
     if not cleaned:
         return ""
-    return "\n\n".join(cleaned) + "\n"
+    return _normalize_typography("\n\n".join(cleaned)).strip() + "\n"
 
 
 def find_ocr_issues(text: str) -> List[OCRIssue]:

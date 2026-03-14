@@ -42,6 +42,11 @@ This writes:
 - common honorific spacing glitches such as `Mr.S.` / `Mr, S.` → `Mr. S.`
 - simple page-number artifact lines such as `( 4 )`
 - punctuation debris inside broken words such as `in«-\nterpretation` → `interpretation`
+- spaces before punctuation such as `word ;` / `word ?` → `word;` / `word?`
+- spaces after opening quotation marks
+- hyphen/em-dash collisions such as `-—`
+- smart-quote normalization for quotation marks and apostrophes
+- `<br>` line-break rendering when `--preserve-linebreaks` is used for poetry or other lineated text
 
 Use `--preserve-linebreaks` for poetry or line-based material.
 
