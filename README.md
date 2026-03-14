@@ -140,6 +140,21 @@ Core files:
 - `clean/` — local clean texts used to build exports
 - `exports/` — generated JSON/JSONL output
 
+## Source acquisition policy
+
+When a public-domain **Project Gutenberg** edition exists, prefer Gutenberg as the upstream textual source unless there is a documented reason not to.
+
+However, `agent-rag` still treats downloaded files as **acquisition inputs**, not as final corpus text.
+
+Working rules:
+
+- prefer Project Gutenberg over tertiary mirrors or fresh OCR when a trustworthy Gutenberg text exists
+- prefer Gutenberg **HTML / HTML zip** for poetry, lineated texts, rich section structure, or any work where markup preserves meaning
+- prefer Gutenberg **plain text** for straightforward prose when HTML adds little structural value
+- keep a second Gutenberg format as a verification aid when useful, such as HTML as the primary source and plain text as a cross-check
+- convert the chosen source into clean canonical Markdown under `clean/` before building exports; do not feed raw Gutenberg HTML, EPUB, or plain text directly into retrieval outputs
+- for automation or discovery at scale, prefer Gutenberg OPDS/catalog feeds over scraping author/index HTML pages
+
 ## Integration target strategy
 
 `agent-rag` now treats the export pipeline as a two-layer system:

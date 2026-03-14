@@ -84,10 +84,14 @@ Recommended examples:
 - `ingest_status`
 - `notes`
 - `digital_source`
+- `preferred_source_format`
+- `verification_url`
 - `scan_url`
 - `transcript_url`
 - `stance`
 - `quality`
+
+For example, when a Project Gutenberg edition exists, curators may want to record both the main verification page and the specific format used for ingestion, such as `preferred_source_format: gutenberg_html` or `preferred_source_format: gutenberg_plaintext`.
 
 ## Source-type guidance
 

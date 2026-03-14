@@ -42,12 +42,24 @@ Start with a small list of high-value sources:
 
 Keep raw scans, OCR output, or downloaded text outside the final clean corpus until reviewed.
 
+When a public-domain **Project Gutenberg** edition exists, prefer Gutenberg as the upstream textual source unless there is a documented reason not to. Use non-Gutenberg scans, OCR, or tertiary mirrors when Gutenberg is unavailable or when the Gutenberg edition omits essential structure or content.
+
+Format-selection rule:
+
+- prefer Gutenberg **HTML / HTML zip** for poetry, lineated texts, rich heading structure, or any work where markup preserves meaning
+- prefer Gutenberg **plain text** for straightforward prose when HTML adds little value
+- keep a secondary format as a verification aid when useful, such as HTML as the primary source and plain text as a cross-check
+- do not treat raw Gutenberg downloads as final corpus text; convert them into reviewed canonical Markdown under `clean/`
+- if you need automated discovery at scale, prefer Gutenberg OPDS/catalog feeds over scraping author/index HTML pages
+
 Suggested future layout:
 
 ```text
 raw/
   scans/
   ocr/
+  downloads/
+    gutenberg/
   transcripts/
 ```
 
