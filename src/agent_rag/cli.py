@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
 from typing import Sequence
 
@@ -51,9 +52,10 @@ def _build_parser() -> argparse.ArgumentParser:
 
     proofread_ocr_parser = subparsers.add_parser(
         "proofread-ocr",
-        help="Use an OpenAI-compatible LLM to conservatively proofread an OCR review packet",
+        help="Use an OpenAI-compatible or native Gemini LLM to conservatively proofread an OCR review packet",
     )
     proofread_ocr_parser.add_argument("review_dir", type=Path)
+    proofread_ocr_parser.add_argument("--provider", choices=["openai", "gemini"], default=os.getenv("AGENT_RAG_LLM_PROVIDER", "openai"))
     proofread_ocr_parser.add_argument("--model", default=None)
     proofread_ocr_parser.add_argument("--base-url", default=None)
     proofread_ocr_parser.add_argument("--api-key", default=None)
@@ -111,6 +113,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "proofread-ocr":
         output_path = proofread_ocr_review_packet(
             args.review_dir,
+            provider=args.provider,
             model=args.model,
             base_url=args.base_url,
             api_key=args.api_key,

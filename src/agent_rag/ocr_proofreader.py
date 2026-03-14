@@ -5,7 +5,7 @@ import os
 import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Callable, Dict, List, Sequence, Tuple
+from typing import Dict, List, Protocol, Sequence, Tuple
 from urllib import error, request
 
 import yaml
@@ -18,6 +18,14 @@ class ProofreadChunkResult:
     end_paragraph: int
     issue_tokens: List[str]
     corrected_text: str
+
+
+class ProofreaderClient(Protocol):
+    model: str
+    base_url: str
+
+    def complete(self, messages: List[Dict[str, str]]) -> str:
+        ...
 
 
 def _split_candidate_document(text: str) -> tuple[str, Dict[str, object], str]:
@@ -143,6 +151,86 @@ class OpenAICompatibleProofreader:
         raise RuntimeError("Unexpected LLM response format")
 
 
+class GeminiProofreader:
+    def __init__(self, *, model: str, api_key: str, base_url: str = "https://generativelanguage.googleapis.com/v1beta") -> None:
+        self.model = model
+        self.api_key = api_key
+        self.base_url = base_url.rstrip("/")
+
+    @classmethod
+    def from_env(
+        cls,
+        *,
+        model: str | None = None,
+        base_url: str | None = None,
+        api_key: str | None = None,
+    ) -> "GeminiProofreader":
+        resolved_model = model or os.getenv("AGENT_RAG_LLM_MODEL") or os.getenv("GEMINI_MODEL")
+        resolved_base = base_url or os.getenv("AGENT_RAG_LLM_BASE_URL") or os.getenv("GEMINI_BASE_URL") or "https://generativelanguage.googleapis.com/v1beta"
+        resolved_key = api_key or os.getenv("GEMINI_API_KEY")
+        if not resolved_model:
+            raise ValueError("Missing model. Set AGENT_RAG_LLM_MODEL / GEMINI_MODEL or pass --model.")
+        if not resolved_key:
+            raise ValueError("Missing Gemini API key. Set GEMINI_API_KEY or pass --api-key.")
+        return cls(model=resolved_model, api_key=resolved_key, base_url=resolved_base)
+
+    def complete(self, messages: List[Dict[str, str]]) -> str:
+        system_parts: List[str] = []
+        contents: List[Dict[str, object]] = []
+        for message in messages:
+            role = message["role"]
+            text = message["content"]
+            if role == "system":
+                system_parts.append(text)
+            elif role == "assistant":
+                contents.append({"role": "model", "parts": [{"text": text}]})
+            else:
+                contents.append({"role": "user", "parts": [{"text": text}]})
+
+        payload: Dict[str, object] = {
+            "contents": contents,
+            "generationConfig": {"temperature": 0},
+        }
+        if system_parts:
+            payload["systemInstruction"] = {"parts": [{"text": "\n\n".join(system_parts)}]}
+
+        req = request.Request(
+            f"{self.base_url}/models/{self.model}:generateContent?key={self.api_key}",
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        try:
+            with request.urlopen(req, timeout=180) as response:
+                body = json.loads(response.read().decode("utf-8"))
+        except error.HTTPError as exc:  # pragma: no cover - network dependent
+            detail = exc.read().decode("utf-8", errors="replace")
+            raise RuntimeError(f"Gemini request failed: {exc.code} {detail}") from exc
+        except error.URLError as exc:  # pragma: no cover - network dependent
+            raise RuntimeError(f"Gemini request failed: {exc}") from exc
+
+        parts = body.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+        text = "".join(str(part.get("text", "")) for part in parts if isinstance(part, dict))
+        if not text:
+            raise RuntimeError("Unexpected Gemini response format")
+        return text
+
+
+def resolve_proofreader_client(
+    *,
+    provider: str = "openai",
+    model: str | None = None,
+    base_url: str | None = None,
+    api_key: str | None = None,
+) -> ProofreaderClient:
+    provider_name = (provider or os.getenv("AGENT_RAG_LLM_PROVIDER") or "openai").lower()
+    if provider_name in {"openai", "openai-compatible", "openrouter"}:
+        return OpenAICompatibleProofreader.from_env(model=model, base_url=base_url, api_key=api_key)
+    if provider_name == "gemini":
+        return GeminiProofreader.from_env(model=model, base_url=base_url, api_key=api_key)
+    raise ValueError(f"Unsupported proofreader provider: {provider_name}")
+
+
 def _build_messages(
     *,
     metadata: Dict[str, object],
@@ -181,12 +269,13 @@ def _build_messages(
 def proofread_ocr_review_packet(
     review_dir: Path,
     *,
+    provider: str = "openai",
     model: str | None = None,
     base_url: str | None = None,
     api_key: str | None = None,
     chunk_chars: int = 6000,
     context_paragraphs: int = 1,
-    client: OpenAICompatibleProofreader | None = None,
+    client: ProofreaderClient | None = None,
 ) -> Path:
     candidate_path = review_dir / "candidate.md"
     prompt_path = review_dir / "proofread_prompt.md"
@@ -200,7 +289,12 @@ def proofread_ocr_review_packet(
     if not paragraphs:
         raise ValueError(f"No OCR body paragraphs found in {candidate_path}")
 
-    proofreader = client or OpenAICompatibleProofreader.from_env(model=model, base_url=base_url, api_key=api_key)
+    proofreader = client or resolve_proofreader_client(
+        provider=provider,
+        model=model,
+        base_url=base_url,
+        api_key=api_key,
+    )
     base_prompt = prompt_path.read_text(encoding="utf-8")
     ranges = _chunk_paragraphs(paragraphs, max_chars=chunk_chars)
 
@@ -235,6 +329,7 @@ def proofread_ocr_review_packet(
     output_path = review_dir / "proofread.md"
     output_path.write_text(front_matter + corrected_body, encoding="utf-8")
     manifest = {
+        "provider": provider,
         "model": proofreader.model,
         "base_url": proofreader.base_url,
         "chunk_chars": chunk_chars,

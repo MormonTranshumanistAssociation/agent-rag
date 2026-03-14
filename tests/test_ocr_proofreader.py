@@ -2,9 +2,16 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from urllib import request
 
 from agent_rag.cli import main
-from agent_rag.ocr_proofreader import _chunk_paragraphs, proofread_ocr_review_packet
+from agent_rag.ocr_proofreader import (
+    GeminiProofreader,
+    OpenAICompatibleProofreader,
+    _chunk_paragraphs,
+    proofread_ocr_review_packet,
+    resolve_proofreader_client,
+)
 
 
 class FakeProofreader:
@@ -69,6 +76,60 @@ def test_proofread_ocr_review_packet_writes_proofread_outputs(tmp_path: Path) ->
     assert any("teh" in message[-1]["content"] for message in fake.calls)
 
 
+def test_resolve_proofreader_client_supports_gemini(monkeypatch) -> None:
+    monkeypatch.setenv("GEMINI_API_KEY", "test-gemini-key")
+
+    client = resolve_proofreader_client(provider="gemini", model="gemini-2.5-pro")
+
+    assert isinstance(client, GeminiProofreader)
+    assert client.model == "gemini-2.5-pro"
+
+
+def test_resolve_proofreader_client_supports_openai(monkeypatch) -> None:
+    monkeypatch.setenv("OPENAI_API_KEY", "test-openai-key")
+
+    client = resolve_proofreader_client(provider="openai", model="gpt-test")
+
+    assert isinstance(client, OpenAICompatibleProofreader)
+    assert client.model == "gpt-test"
+
+
+def test_gemini_proofreader_complete_parses_response(monkeypatch) -> None:
+    captured = {}
+
+    class FakeResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+        def read(self) -> bytes:
+            return json.dumps({
+                "candidates": [
+                    {"content": {"parts": [{"text": "Corrected text"}]}}
+                ]
+            }).encode("utf-8")
+
+    def fake_urlopen(req: request.Request, timeout: int = 0):
+        captured["url"] = req.full_url
+        captured["body"] = json.loads(req.data.decode("utf-8"))
+        return FakeResponse()
+
+    monkeypatch.setattr(request, "urlopen", fake_urlopen)
+
+    client = GeminiProofreader(model="gemini-2.5-pro", api_key="test-key")
+    output = client.complete([
+        {"role": "system", "content": "System guidance"},
+        {"role": "user", "content": "Please correct this text."},
+    ])
+
+    assert output == "Corrected text"
+    assert captured["url"].startswith("https://generativelanguage.googleapis.com/")
+    assert captured["body"]["systemInstruction"]["parts"][0]["text"] == "System guidance"
+    assert captured["body"]["contents"][0]["parts"][0]["text"] == "Please correct this text."
+
+
 def test_cli_proofread_ocr_invokes_proofreader(monkeypatch, tmp_path: Path) -> None:
     review_dir = tmp_path / "review"
     review_dir.mkdir()
@@ -87,8 +148,10 @@ def test_cli_proofread_ocr_invokes_proofreader(monkeypatch, tmp_path: Path) -> N
     exit_code = main([
         "proofread-ocr",
         str(review_dir),
+        "--provider",
+        "gemini",
         "--model",
-        "demo-model",
+        "gemini-2.5-pro",
         "--chunk-chars",
         "1234",
         "--context-paragraphs",
@@ -97,6 +160,7 @@ def test_cli_proofread_ocr_invokes_proofreader(monkeypatch, tmp_path: Path) -> N
 
     assert exit_code == 0
     assert called["review_dir"] == review_dir
-    assert called["model"] == "demo-model"
+    assert called["provider"] == "gemini"
+    assert called["model"] == "gemini-2.5-pro"
     assert called["chunk_chars"] == 1234
     assert called["context_paragraphs"] == 2

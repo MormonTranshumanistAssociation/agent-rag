@@ -63,15 +63,30 @@ Use a proofreader agent, skill, or human reviewer to:
 
 ## LLM-assisted second-pass proofreading
 
-After `prepare-ocr`, you can run an OpenAI-compatible frontier model over the review packet:
+After `prepare-ocr`, you can run a frontier model over the review packet.
+
+### OpenAI-compatible providers
 
 ```bash
+export AGENT_RAG_LLM_PROVIDER=openai
 export AGENT_RAG_LLM_API_KEY=...
 export AGENT_RAG_LLM_MODEL=openai/gpt-5
 # optional: AGENT_RAG_LLM_BASE_URL=https://openrouter.ai/api/v1
 
 PYTHONPATH=src python -m agent_rag.cli proofread-ocr \
   subjects/parley-p-pratt/raw/review/late-persecutions-main-narrative
+```
+
+### Native Gemini
+
+```bash
+export AGENT_RAG_LLM_PROVIDER=gemini
+export GEMINI_API_KEY=...
+export AGENT_RAG_LLM_MODEL=gemini-2.5-pro
+
+PYTHONPATH=src python -m agent_rag.cli proofread-ocr \
+  subjects/parley-p-pratt/raw/review/late-persecutions-main-narrative \
+  --provider gemini
 ```
 
 This reads `candidate.md`, `proofread_prompt.md`, and `lint_report.json`, then writes:
