@@ -87,6 +87,26 @@ def test_normalize_ocr_text_keeps_terminal_digit_one_when_context_is_not_interro
     assert normalized == 'Section 1 And this paragraph continues without a question.\n'
 
 
+def test_normalize_ocr_text_repairs_obvious_spaced_hyphenation_artifacts() -> None:
+    raw_text = 'The following is a copy of a declaration, which was signed by the mob at the commence- ment of their operations.\nThey complain that God had cho- sen the poor in this world.\nThe witness profess- ed belief in the record.\n'
+
+    normalized = normalize_ocr_text(raw_text)
+
+    assert normalized == (
+        'The following is a copy of a declaration, which was signed by the mob at the commencement of their operations. '
+        'They complain that God had chosen the poor in this world. '
+        'The witness professed belief in the record.\n'
+    )
+
+
+def test_normalize_ocr_text_preserves_uncertain_spaced_hyphenation() -> None:
+    raw_text = 'We look toward to- morrow with hope.\n'
+
+    normalized = normalize_ocr_text(raw_text)
+
+    assert normalized == 'We look toward to- morrow with hope.\n'
+
+
 def test_normalize_ocr_text_infers_question_mark_after_reconstructing_wrapped_sentence() -> None:
     raw_text = 'Who can behold such scenes of horror\nAnd call it justice.\n'
 

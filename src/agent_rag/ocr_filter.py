@@ -140,6 +140,33 @@ def _is_allowed_word(token: str) -> bool:
     )
 
 
+def _is_known_word(token: str) -> bool:
+    normalized = _normalize_lookup_token(token)
+    if not normalized:
+        return False
+    if _is_allowed_word(normalized):
+        return True
+    return normalized.lower() not in _SPELLCHECKER.unknown([normalized.lower()])
+
+
+def _repair_spaced_hyphenated_words(text: str) -> str:
+    pattern = re.compile(r"\b(?P<left>[A-Za-z][A-Za-z'’]{1,})-\s+(?P<right>[A-Za-z][A-Za-z'’]{1,})\b")
+
+    def replace(match: re.Match[str]) -> str:
+        left = match.group("left")
+        right = match.group("right")
+        joined = left + right
+        if not _is_known_word(joined):
+            return match.group(0)
+        left_known = _is_known_word(left)
+        right_known = _is_known_word(right)
+        if left_known and right_known and len(right) > 3:
+            return match.group(0)
+        return joined
+
+    return pattern.sub(replace, text)
+
+
 def _smartify_quotes(text: str) -> str:
     text = re.sub(r"(?<=\w)'(?=\w)", "’", text)
     result: list[str] = []
@@ -320,7 +347,7 @@ def normalize_ocr_text(text: str, preserve_linebreaks: bool = False) -> str:
     if preserve_linebreaks:
         stanzas = []
         for stanza in re.split(r"\n\s*\n", normalized.strip()):
-            lines = [re.sub(r"\s+", " ", line.strip()) for line in stanza.split("\n") if line.strip()]
+            lines = [_repair_spaced_hyphenated_words(re.sub(r"\s+", " ", line.strip())) for line in stanza.split("\n") if line.strip()]
             if not lines:
                 continue
             stanzas.append("<br>\n".join(lines))
@@ -331,11 +358,11 @@ def normalize_ocr_text(text: str, preserve_linebreaks: bool = False) -> str:
     paragraphs = re.split(r"\n\s*\n", normalized.strip())
     cleaned = []
     for paragraph in paragraphs:
-        lines = [re.sub(r"\s+", " ", line.strip()) for line in paragraph.split("\n") if line.strip()]
+        lines = [_repair_spaced_hyphenated_words(re.sub(r"\s+", " ", line.strip())) for line in paragraph.split("\n") if line.strip()]
         if not lines:
             continue
         sentence_candidates = _reconstruct_sentence_candidates(lines)
-        repaired_sentences = [_repair_sentence_terminal_punctuation(sentence) for sentence in sentence_candidates]
+        repaired_sentences = [_repair_spaced_hyphenated_words(_repair_sentence_terminal_punctuation(sentence)) for sentence in sentence_candidates]
         cleaned.append(" ".join(repaired_sentences))
 
     if not cleaned:
