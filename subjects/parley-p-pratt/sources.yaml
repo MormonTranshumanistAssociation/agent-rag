@@ -6,6 +6,8 @@ sources:
     source_type: primary
     genre: theological_treatise
     url: https://www.gutenberg.org/ebooks/35554
+    preferred_source_format: gutenberg_plaintext
+    verification_url: https://www.gutenberg.org/files/35554/35554.txt
     rights: public_domain
     priority: high
     ingest_status: full_text_ingested
@@ -35,14 +37,17 @@ sources:
     publication_year: 1840
     source_type: primary
     genre: poetry
-    url: https://contentdm.lib.byu.edu/digital/collection/NCMP1820-1846/id/2832/
+    url: https://www.gutenberg.org/ebooks/60077
+    preferred_source_format: gutenberg_html
+    verification_url: https://www.gutenberg.org/files/60077/60077-h/60077-h.htm
+    scan_url: https://contentdm.lib.byu.edu/digital/collection/NCMP1820-1846/id/2832/
     rights: public_domain
     priority: medium
-    ingest_status: partial_ocr_sections_ingested
+    ingest_status: full_text_ingested
     notes: >-
-      BYU page-image source acquired. First-pass poetry-preserving OCR ingestion is
-      now present for "The Millennium", "Historical Sketch", "Ministry to the
-      Nephites", and "Our Country"; additional sections remain to be reviewed.
+      Whole public-domain Gutenberg volume is now segmented by poem/treatise from
+      the HTML edition, with poetic lineation preserved using <br> line breaks. A
+      BYU page-image scan remains useful as a secondary verification source.
 
   - id: late-persecutions-1840
     title: Late Persecutions of the Church of Jesus Christ of Latter-day Saints
@@ -78,6 +83,8 @@ sources:
     source_type: primary
     genre: theological_treatise
     url: https://www.gutenberg.org/ebooks/35470
+    preferred_source_format: gutenberg_plaintext
+    verification_url: https://www.gutenberg.org/files/35470/35470.txt
     rights: public_domain
     priority: high
     ingest_status: full_text_ingested
@@ -93,6 +100,8 @@ sources:
     source_type: primary
     genre: autobiography
     url: https://www.gutenberg.org/ebooks/44896
+    preferred_source_format: gutenberg_plaintext
+    verification_url: https://www.gutenberg.org/files/44896/44896-0.txt
     rights: public_domain
     priority: high
     ingest_status: full_body_ingested

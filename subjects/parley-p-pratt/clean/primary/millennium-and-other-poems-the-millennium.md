@@ -6,7 +6,7 @@ document_title: The Millennium
 author: Parley P. Pratt
 composed_year: 1840
 source_type: primary
-selection_notes: First-pass OCR review from BYU page images; poetic lineation is preserved with <br> line breaks.
+selection_notes: Whole-title ingestion from Project Gutenberg HTML, segmented by internal section for retrieval provenance; poetic lineation is preserved with <br> line breaks where present.
 ---
 
 # The Millennium
@@ -20,9 +20,9 @@ Cheers up the soul, and tunes the sounding lyre:<br>
 Lights the dark vale of sorrow, pain and wo,<br>
 And gives to man a paradise below.<br>
 The joyful time, by prophets long foretold,<br>
-At length comes rolling on the astonished world;<br>
+At length comes rolling on the astonished world:<br>
 When God, the second time, should set his hand,<br>
-To gather Israel to their promised land,<br>
+To gather Israel to their promised land.<br>
 An ensign to the nations now is reared,<br>
 The standard waving, and the way prepared;<br>
 Let kings and empires tremble at his word,<br>
@@ -30,7 +30,7 @@ The gentle nations all their aid afford.<br>
 What though Assyria’s captives long and lone,*<br>
 Have wandered outcasts to the world unknown,<br>
 In some far region to the frozen north,<br>
-Where pale Borealis sends his meteors forth!<br>
+Where pale Borealis sends his meteors forth!!<br>
 Where fields of ice unbounded block the road,<br>
 To keep intruders from their drear abode;<br>
 Where no sweet flowers the dreary landscape cheer,<br>
@@ -54,7 +54,7 @@ They cross dry shod, with wonder and surprise.<br>
 And thus with joy Assyria’s captives come,<br>
 In grand procession to their ancient home;<br>
 A scene of joy and wonder more sublime<br>
-Than all that passed in hardened Pharaoh’s time,<br>
+Than all that passed in hardened Pharaoh’s time.<br>
 When captive Israel raised to heaven their cry,<br>
 And Moses came, commissioned from on high,<br>
 Poured the ten plagues on Egypt with his rod,<br>
@@ -78,7 +78,7 @@ Their God, in fire by night, in cloud by day<br>
 Before them moved, majestic to behold!<br>
 Until on Sinai’s mount the thunder rolled,<br>
 And lightnings flaming in one general glare,<br>
-While clouds of smoke hung on the darkened air:<br>
+While clouds of smoke hung on the darkened air.<br>
 Jehovah spake! the trumpet, long and loud,<br>
 Earth’s whole foundation to the centre bowed.<br>
 Israel and Moses quaking stood around,<br>
@@ -87,7 +87,7 @@ Moses, at length, drew near; the law was given,<br>
 Of justice, equal weights, and measure even:<br>
 And angels’ food became their constant bread,<br>
 A month on quails their numerous hosts were fed,<br>
-The rock was smitten, and a fountain burst,<br>
+The rock was smitten, and a fountain burst,—<br>
 Poured forth its cooling stream to quench their thirst.<br>
 His angel led them all their journey through;<br>
 The nations trembling, fainted at the view;<br>
@@ -98,7 +98,7 @@ Than Israel ever saw or Egypt knew:<br>
 Ten thousand times ten thousand I behold,<br>
 Returning home, as prophets long foretold:<br>
 Sing, O ye heavens! let earth rejoice again,<br>
-And all prepare for king Messiah’s reign.<br>
+And all prepare for king Messiah’s reign.
 
 *The Ten Tribes.*
 
@@ -127,7 +127,7 @@ Thy daughters on their shoulders shall be borne.<br>
 Trees crowned with fruit their fainting souls shall cheer,<br>
 Their desert land like Eden shall appear;<br>
 Their fields, where desolation long has reigned,<br>
-Shall now be fenced, and tilled, and sowed again;<br>
+Shall now, be fenced, and tilled, and sowed again;<br>
 And flocks and herds, in plenty shall be seen,<br>
 O’er all the plains they feed in pastures green.<br>
 Thy ruined cities shall in splendor rise,<br>
@@ -135,7 +135,7 @@ Thy lofty towers point upwards to the skies;<br>
 Thy temple reared, most glorious to behold,<br>
 Its courts adorned with precious stones and gold:<br>
 All things restored, as prophets long declared,<br>
-Thus king Messiah’s way shall be prepared.<br>
+Thus king Messiah’s way shall be prepared.
 
 ## Chapter III
 
@@ -149,7 +149,7 @@ See Joseph’s remnants, long in darkness dwell,<br>
 Since by their hands a mighty nation fell.*<br>
 The light which once illumed their happy land,<br>
 Where towns and cities did in order stand,<br>
-Had slumbered long beneath their mouldering towers,<br>
+Had slumbered long beneath their mouldering towers.<br>
 Their flowery landscape, and their shady bowers.<br>
 Had long been scenes of cruelty, and blood,<br>
 The scourge and wrath of an avenging God:<br>
@@ -180,7 +180,7 @@ And liberty still thundered from their tongues;<br>
 Onward they rushed with rage and wild despair,<br>
 The midnight war-whoop rent the darkened air;<br>
 While terror seized their unsuspecting prey,<br>
-And blood of infants marked their dreadful way:<br>
+And blood of infants marked their dreadful way!<br>
 Towns wrapped in flames and women captive led,<br>
 Where cruel torture filled their souls with dread.<br>
 Once more the Gentile stung with keen revenge;<br>
@@ -210,13 +210,13 @@ With dreadful slaughter mark their vengeful course,<br>
 Till checked by force superior to their own,<br>
 Again they fly discouraged and undone,<br>
 Reduced in numbers, give the struggle o’er,<br>
-Tamely submit, and seek their rights no more.<br>
+Tamely submit, and seek their rights no more.
 
 *The Nephites.*
 
 ## Chapter IV
 
-The American Revolution—Its effects upon other nations—French Revolution—Revolution of Greece, Poland, &c.—Present prosperity of the United States of America—Present state of the Indians—Indian prayer.
+The American Revolution—Its effects upon other nations—French Revolution—Revolution of Greece, Poland, &c—Present prosperity of the United States of America—Present state of the Indians—Indian prayer.
 
 Meantime the Gentiles break their foreign yoke,<br>
 While tyrants tremble at the dreadful stroke,<br>
@@ -230,7 +230,7 @@ With admiration seized, the nations all,<br>
 Filled with delight Columbia’s deeds extol;<br>
 And gazing still, they catch the sacred fire,<br>
 And love of liberty their souls inspire.<br>
-While nations oft in their extended plan,<br>
+While nations oft in their extended plan;<br>
 From slumber wake to claim the rights of man,<br>
 Empires o’erturned, and tyrants headlong hurled,<br>
 The voice of freedom echoes round the world.<br>
@@ -241,8 +241,8 @@ Through seas of blood, where millions met their fate:<br>
 Till they reluctant give the struggle o’er,<br>
 And rest content with rights enjoyed before.<br>
 And next the Greeks their ancient spirit caught,<br>
-From long oppression roused they bravely fought.<br>
-They burst the Moslem chains emerging free.<br>
+From long oppression roused they bravely fought,<br>
+They burst the Moslem chains emerging free,<br>
 Through seas of blood obtained their liberty.<br>
 Poland in turn received the sacred fire,<br>
 Her noble sons for freedom did aspire;<br>
@@ -251,15 +251,15 @@ But cease, my muse; the tale forbear to tell,<br>
 And turn again unto the favored shore,<br>
 Where freedom’s genius kindly hovers o’er,<br>
 See states and nations joyfully extend,<br>
-Their wide domain almost from end to end:<br>
+Their wide domain almost from end to end;<br>
 From the far eastern shores of rugged Maine,<br>
 To wild Missouri’s rich and flowery plains,<br>
 The harvest fields with rural plenty crowned;<br>
 And flowery gardens flourish all around;<br>
 The humble cottage and the lofty dome,<br>
-Each crowned with plenty form an equal home.<br>
+Each crowned with plenty form an equal home<br>
 See on her lakes, and on her thousand streams,<br>
-Her vessels float impelled by sail or steam,<br>
+Her vessels float impelled by sail or steam.<br>
 While busy commerce floats along her seas,<br>
 With sails expanded wide before the breeze;<br>
 Far o’er the wave her rich produce they bear,<br>
@@ -282,16 +282,16 @@ Long hast thou scourged him with thy chastening sore,<br>
 When will thy vengeance cease, thy wrath be o’er;<br>
 When will the white man’s dire ambition cease,<br>
 And let our scattered remnants dwell in peace?<br>
-Or shall we, driven to the western shore,<br>
+Or shall we, (driven to the western shore)<br>
 Become extinct and fall to rise no more?<br>
 Forbid, great Spirit; make thy mercy known,<br>
 Reveal thy truth, thy wandering captives own,<br>
 Make bare thine arm of power for our release,<br>
-And o’er the earth extend the reign of peace,<br>
+And o’er the earth extend the reign of peace.
 
 ## Chapter V
 
-Coming forth of the fulness of the Gospel—Restoration of the Indians and their gathering West of the Mississippi, by the present administration in fulfilment of prophecy—Commission and ministry of the servants of God in the last dispensation—Commencement of the gathering of the Gentile Church—Their persecution and dispersion in fulfilment of prophecy, from which reflections are drawn on the subject of persecution in general—The endowment of the servants of God and their ministry among all nations—The power of God displayed in making bare his arm in the eyes of all nations—They flow to Zion—Possess the land in peace—Build up a holy city no more to be thrown down—The wars, earthquakes, pestilences, famines and signs in heaven above and earth beneath which are to precede the Millennium—The resurrection of the saints—The coming of Christ with all his saints—The burning of the wicked—The restitution of the earth with all its blessings.
+Coming forth of the fulness of the Gospel—Restoration of the Indians and their gathering West of the Mississippi, by the present administration in fulfilment of prophecy—Commission and Ministry of the servants of God in the last dispensation—Commencement of the gathering of the Gentile Church—Their persecution and dispersion in fulfilment of prophecy, from which reflections are drawn on the subject of persecution in general—The enduement of the servants of God and their ministry among all nations—The power of God displayed in making bare his arm in the eyes of all nations—They flow to Zion—Possess the land in peace—Build up a holy city no more to be thrown down—The wars, earthquakes, pestilences, famines and signs in heaven above anil earth beneath which are to precede the Millennium—The resurrection of the saints—The coming of Christ with all his saints—The burning of the wicked—The restitution of the earth with all its blessings.
 
 Ye gloomy scenes far hence, intrude no more;<br>
 Sublimer themes invite the muse, to soar<br>
@@ -341,7 +341,7 @@ O fools, and slow of heart to understand<br>
 The prophecies concerning Zion’s land.<br>
 Have ye not read the words of them of old?<br>
 When wrapt in vision clear they have foretold<br>
-The wicked deeds that you of late fulfill’d,<br>
+The wicked deeds that you of late fulfil’d,<br>
 The scenes that have transpired on Zion’s hill?<br>
 He that is truly wise will search and see,<br>
 He that’s already blind more blind shall be;<br>
@@ -364,7 +364,7 @@ When they the inquisition call’d to aid,<br>
 Perhaps these modern times have made a few,<br>
 Who turn’d from saints to join the drunken crew;<br>
 But persecution spreads the truth abroad,<br>
-Makes servants bolder in the cause of God.<br>
+Make servants bolder in the cause of God.<br>
 Adds to their numbers, twice ten thousand more,<br>
 And makes them stronger than they were before.<br>
 See men commission’d in Messiah’s name,<br>
@@ -385,8 +385,8 @@ Let Joseph’s remnants at thy gates attend,<br>
 Walk in thy light, and in thy temple bend,<br>
 While Gentile saints thy spacious courts shall throng,<br>
 And join their voices in the general song;<br>
-No more shall proud oppression drive thee hence,<br>
-Nor terror come, for God is your defence.<br>
+No more shall proud oppression drive the hence,<br>
+Nor terror come, for God is your defence<br>
 Come, gentle muse, suspend the joyful lay,<br>
 And o’er the earth let’s take a wide survey;<br>
 Soft touch the lyre in slow and mournful strains,<br>
@@ -407,7 +407,7 @@ See through the heavens the sun in sackcloth mourn,<br>
 The moon to blood in frowning anger turns,<br>
 The stars affrighted from their spheres are hurled,<br>
 System on system wreck’d and world on world,<br>
-Earth’s whole foundation to the centre nods,<br>
+Earth’s whole foundation to the centre nods.<br>
 And nature trembling feels the power of God.<br>
 While Michael sounds the trumpet loud and long,<br>
 See from their graves the saints unnumbered throng;<br>
@@ -432,14 +432,14 @@ While on its top he sets his feet again!<br>
 The islands at his word obedient flee!<br>
 While to the north he rolls the mighty sea!<br>
 Restores the earth in one, as at the first,<br>
-With all its blessings, and removes the curse.<br>
+With all its blessings, and removes the curse.
 
 ## Chapter VI
 
 The binding of Satan—Pouring out of the spirit upon all flesh—Harmony of all the beasts of the earth, while peace and the knowledge and glory of God shall cover the earth as the waters cover the sea—The faith of Abel the first martyr—Enoch’s song—The testimony of many of the holy prophets and apostles—And the general expectation of all the saints in all nations and generations.
 
 Lo! Satan bound in chains shall rage no more,<br>
-Nor tempt mankind till thousand years are o’er:<br>
+Nor tempt mankind till thousand years are o’er;<br>
 But perfect peace and harmony extend<br>
 Their wide domain to earth’s remotest ends,<br>
 All flesh shall feel the spirit from on high,<br>
@@ -449,8 +449,8 @@ While in the shade their young ones shall be seen,<br>
 The lion cease to be a beast of prey,<br>
 And like the harmless ox shall feed on hay;<br>
 The little child secure from harm shall stray<br>
-O’er poisonous serpent’s dens shall fearless play:<br>
-In all God’s holy mount shall naught destroy,<br>
+O’er poisonous serpent’s dens shall fearless play;<br>
+In all God’s holy Mount shall naught destroy,<br>
 But men for pruning hooks their spears employ;<br>
 Their swords to ploughshares turned, shall till the ground,<br>
 While plenteous harvests flourish all around,<br>
@@ -494,7 +494,7 @@ When all the ransom’d saints shall join the lay,<br>
 And shout Hosanna in eternal day.<br>
 Wide o’er the earth, the Saviour’s name extend;<br>
 And peace o’er all prevail from end to end.<br>
-Thus Enoch sang, while all the heavenly choir<br>
+Thus Enoch sang, while all the heavenly choir;<br>
 Join’d in Hosanna to the king Messiah.<br>
 Noah too, by faith beheld the scene afar;<br>
 And as a type, he did the ark prepare.<br>
@@ -511,8 +511,8 @@ In Canaan’s land, a right he had obtained.<br>
 Isaac and Jacob had the glorious view,<br>
 Rejoiced in death and so did Joseph too;<br>
 While patient Job in pain look’d far away,<br>
-Saw his Redeemer in the latter day.<br>
-Stand on the earth, while he himself should rise,<br>
+Saw his Redeemer in the latter day,<br>
+Stand on the earth, while he himself should rise<br>
 And in the flesh behold him with his eyes.<br>
 Moses and Joshua, Samuel and Isaiah,<br>
 Did each in turn this solemn truth declare;<br>
@@ -537,4 +537,4 @@ Through boundless space till man can find no end,<br>
 And all the heavenly host around the throne,<br>
 Shall sound his praise in reverential tone.<br>
 Millions unnumber’d at his feet shall fall,<br>
-Hail him as king, and crown him Lord of all,<br>
+Hail him as king, and crown him Lord of all.

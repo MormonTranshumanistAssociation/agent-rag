@@ -46,19 +46,19 @@ This `notes.md` file is for researchers and maintainers, not for authorial retri
 
 ## Whole-title primary texts currently ingested
 
-The clean corpus now includes whole public-domain Gutenberg texts segmented by preface/chapter for:
+The clean corpus now includes all four Parley P. Pratt titles currently available on Project Gutenberg:
 
-- *A Voice of Warning*
-- *Key to the Science of Theology*
-- *The Autobiography of Parley Parker Pratt* (main chaptered body; mixed-voice closing material and editorial appendix/transcriber matter excluded)
+- *A Voice of Warning* — segmented by preface/chapter
+- *Key to the Science of Theology* — segmented by preface/chapter
+- *The Autobiography of Parley Parker Pratt* — main chaptered body only; mixed-voice closing material and editorial appendix/transcriber matter excluded
+- *The Millennium and Other Poems* — segmented by preface, poem/treatise, and internal part/chapter structure, with poetic lineation preserved using `<br>` line breaks
 
-This is a much stronger bootstrap than the earlier seed excerpts, but it is still not the full intended Parley corpus because several important titles remain available only as scans/OCR workflows rather than already-clean text. *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* have now been ingested as conservative first-pass whole-work OCR reviews; *The Millennium and Other Poems* now has first-pass clean sections for *The Millennium*, *Historical Sketch*, *Ministry to the Nephites*, and *Our Country*, while additional sections and other scan-driven titles still await the same treatment.
+This is a much stronger bootstrap than the earlier seed excerpts. The remaining major corpus gaps are now concentrated in non-Gutenberg or scan-driven works. *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* are already present as conservative first-pass whole-work OCR reviews, while *Late Persecutions* remains the most important still-uningested primary title.
 
 ## Good next steps
 
 - ingest *Late Persecutions* as a historical-narrative counterpoint once a clean OCR/text workflow is in place
-- add poetry/hymn material to widen stylistic coverage
-- ingest *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* from clean text or reviewed OCR
+- perform second-pass proofreading on the OCR-derived *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* texts
 - use `raw/ocr/` + `raw/review/` as the staging area for remaining scan-driven works
 - introduce explicit edition metadata fields
 - add duplicate-detection across overlapping editions

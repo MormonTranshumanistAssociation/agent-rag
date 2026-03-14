@@ -2,134 +2,95 @@
 document_id: millennium-and-other-poems-ministry-to-the-nephites
 source_id: millennium-and-other-poems-1840
 work_title: The Millennium and Other Poems
-document_title: Ministry to the Nephites
+document_title: Christ’s Ministry to the Nephites
 author: Parley P. Pratt
 composed_year: 1840
 source_type: primary
-selection_notes: First-pass OCR review from BYU page images; poetic lineation is preserved with <br> line breaks.
+selection_notes: Whole-title ingestion from Project Gutenberg HTML, segmented by internal section for retrieval provenance; poetic lineation is preserved with <br> line breaks where present.
 ---
 
-# Ministry to the Nephites
-
-## Christ’s Ministry to the Nephites
+# Christ’s Ministry to the Nephites
 
 The solid rocks were rent in twain,<br>
 When Christ the Lamb of God was slain;<br>
 The sun in darkness veiled his face,<br>
-The mountains moved and left their place.<br>
+The mountains moved and left their place.
 
 And all creation groaned in pain<br>
 Till the Messiah rose again;<br>
 When earth did cease her dreadful groans,<br>
-The sun unveiled his face and shone;<br>
+The sun unveiled his face and shone;
 
 The righteous that were spared alive,<br>
 With joy and wonder did believe,<br>
 And soon together they convened<br>
-Conversing on the things they’d seen:<br>
+Conversing on the things they’d seen:
 
 Which had been given for a sign,<br>
 When lo, they heard a voice divine,<br>
 And as the heavenly voice they heard<br>
-The Lord of glory soon appeared.<br>
+The Lord of glory soon appeared.
 
 ## Second Part
 
 With joy and wonder all amazed,<br>
 Upon their glorious Lord they gazed,<br>
 And wist not what the vision meant<br>
-But thought it was an angel sent<br>
+But thought it was an angel sent
 
 While in their midst he smiling stood,<br>
 Proclaimed himself the son of God,<br>
 He said come forth and feel and see,<br>
-That you may witness bear of me.<br>
+That you may witness bear of me.
 
 And when they all had felt and seen<br>
 Where once the nails and spear had been,<br>
 Hosanna they aloud proclaimed,<br>
-And blessed and praised his holy name,<br>
+And blessed and praised his holy name,
 
 He then proceeded to make plain<br>
 His gospel to the sons of men,<br>
 The prophecies he did unfold,<br>
-Yea, things that were in days of old.<br>
+Yea, things that were in days of old.
 
 And every thing that should transpire<br>
 Till element should melt with fire,<br>
 Commanding them for to record<br>
-The sayings of their risen Lord;<br>
+The sayings of their risen Lord;
 
 That generation should be blessed,<br>
 And with him in his kingdom rest;<br>
 But, O! what scenes of sorrow rolled<br>
-When he the future did unfold!<br>
+When he the future did unfold!
 
 ## Part Third
 
 Four generations should not pass<br>
 Until they’d turn from righteousness,<br>
 The Nephite nation be destroyed!<br>
-The Lamanites reject his word,<br>
+The Lamanites reject his word,
 
 The gospel taken from their midst,<br>
 The record of their fathers hid,<br>
 They dwindle long in unbelief,<br>
-And ages pass without relief,<br>
+And ages pass without relief,
 
 Until the Gentiles from afar,<br>
 Should smite them in a dreadful war,<br>
 And take possession of their land,<br>
-And they should have no power to stand.<br>
+And they should have no power to stand.
 
 But as their remnants wander far,<br>
 In darkness, sorrow and despair,<br>
 Lo! from the earth their record comes<br>
-To gather Israel to their homes.<br>
+To gather Israel to their homes.
 
 First to the Gentiles ’tis revealed,<br>
 The prophecy must be fulfilled;<br>
 That they may know and understand<br>
-His gospel, and no more contend.<br>
+His gospel, and no more contend.
 
 Hear! O ye Gentiles, and repent,<br>
 To you is this salvation sent;<br>
 God to the Gentiles lifts his hand,<br>
-To gather Israel to their land.<br>
-
-## The Nephites, Lamanites and Gentiles
-
-O who that has search’d in the records of old,<br>
-And read the last scenes of distress;<br>
-Four and twenty were left who with Mormon beheld,<br>
-While their nation lay mouldering to dust.<br>
-
-The Nephites destroyed, the Lamanites dwelt,<br>
-For ages in sorrow unknown;<br>
-Generations have pass’d, till the Gentiles at last,<br>
-Have divided their lands as their own.<br>
-
-O, who that has seen o’er the wide spreading plain<br>
-The Lamanites wander forlorn,<br>
-While the Gentiles in pride and oppression divide<br>
-The land they could once call their own.<br>
-
-And who that believes does not long for the hour<br>
-When sin and oppression shall cease,<br>
-And truth, like the rainbow, display through the shower,<br>
-That bright written promise of peace.<br>
-
-O, thou afflicted and sorrowful race,<br>
-The days of thy sorrow shall end;<br>
-The Lord has pronounced you a remnant of His,<br>
-Descended from Abram his friend.<br>
-
-Thy stones with fair colors most glorious shall stand,<br>
-And sapphires all shining around;<br>
-Thy windows of agates in this glorious land,<br>
-And thy gates with carbuncles abound.<br>
-
-With songs of rejoicing to Zion return,<br>
-And sorrow and sighing shall flee;<br>
-The powers of heaven among you come down.<br>
-And Christ in the centre will be.<br>
+To gather Israel to their land.

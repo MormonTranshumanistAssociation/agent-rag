@@ -6,31 +6,34 @@ document_title: Our Country
 author: Parley P. Pratt
 composed_year: 1840
 source_type: primary
-selection_notes: First-pass OCR review from BYU page images; poetic lineation is preserved with <br> line breaks.
+selection_notes: Whole-title ingestion from Project Gutenberg HTML, segmented by internal section for retrieval provenance; poetic lineation is preserved with <br> line breaks where present.
 ---
 
 # Our Country
 
-An Extract.
+AN EXTRACT.
 
-Written in Prison.
+WRITTEN IN PRISON.
 
 Here nature too, her grandest works display;<br>
 Sublimest themes inspire the Poet’s lays,<br>
 As if creative power in skill progressed,<br>
-As onward still it moved towards the west.<br>
+As onward still it moved towards the west.
+
 Till here it finished with a master hand<br>
 Its mightiest works—to excel all other lands.<br>
 In awful majesty our mountains rise,<br>
 O’erlook the clouds, and tower amid the skies,<br>
 Their lofty summits bid defiance bold,<br>
-They fear no rival heights in older worlds.<br>
+They fear no rival heights in older worlds.
+
 ’Tis true Himmaleh, (Asia’s highest peak,)<br>
 Has dared with Chimborazo to compete;<br>
 But then our rocky summits—scarce explored<br>
 Some nameless rival heights may yet afford;<br>
 Whose towering pride shall seize the starry crown,<br>
-And cast Himmaleh, humbled, to the ground.<br>
+And cast Himmaleh, humbled, to the ground.
+
 Our proud volcanoes, belching forth their flames,<br>
 With smoke and lava, overwhelm the plains;<br>
 Their lightnings play—their awful thunders roar,<br>
@@ -38,35 +41,40 @@ Convulse the earth and sea from shore to shore.<br>
 Among them Cotopaxi’s awful voice<br>
 Would silence Etna,—drown Vesuvius’ noise;<br>
 While Europe wondering listens to admire<br>
-The power superior of Columbia’s fires.<br>
+The power superior of Columbia’s fires.
+
 Our lakes, like inland seas expanding wide,<br>
 Have not a parallel on earth beside.<br>
 Ontario, Erie, Huron, Michigan,<br>
 And vast Superior form the mighty plan,<br>
 Their waves like oceans wash the verdant shore,<br>
-In western wilds too boundless to explore.<br>
+In western wilds too boundless to explore.
+
 Can Europe, Africa, or Asia boast<br>
 A lake compared with these in all their coasts?<br>
 Our rivers too, pursue their lengthened way,<br>
 From far off mountains to the distant sea,<br>
-Through fertile vales—the flowery meads along,<br>
+Through fertile vales,—the flowery meads along,<br>
 And chiming still their gently murmuring song;<br>
-Receiving grateful tribute as they run,<br>
-From thousand streams all mingling into one.<br>
+Receiving grateful tribute as they run.<br>
+From thousand streams all mingling into one.
+
 Lo! wild Missouri’s waters have their source<br>
 In unknown regions to the west and north,<br>
 From limpid lakes or from the mountain snows,<br>
 From thousand springing streams its current flows;<br>
 Mid vast prairies, winds its lengthened way,<br>
 Two thousand miles where savage hunters stray,<br>
-Then quits its wild wanderings to receive<br>
-The busy hum of commerce on its wave.<br>
+Then quits its wildly wanderings to receive<br>
+The busy hum of commerce on its wave.
+
 Two thousand more its rapid current flows,<br>
 Receiving still large rivers as it goes,<br>
 Young Empires flourish all along its tide,<br>
 And joyous cities rise on every side.<br>
 What is the boasted Nile compared with this?<br>
-Its magnitude is lost in nothingness,<br>
+Its magnitude is lost in nothingness,
+
 Asia and Europe’s longest, proudest streams<br>
 ’Longside Missouri’s tide how short they seem!<br>
 Our cataracts too, in grandeur far outvie,<br>
@@ -76,7 +84,8 @@ The venturous steamer floating on its tide:<br>
 Its limpid waters draining half a world,<br>
 Into the yawning gulf are headlong hurled,<br>
 And for a moment lose the light of day,—<br>
-Dash on the rocks—then rise in misty spray.<br>
+Dash on the rocks—then rise in misty spray.
+
 The playful sunbeams trembling kiss its tears,<br>
 And from this loved embrace the bow appears;<br>
 Commingling colors of the liveliest hue<br>
@@ -86,9 +95,10 @@ Their beauty half concealed from vulgar glance;<br>
 Now veil’d in clouds—now bursting to the view<br>
 In blushing modesty, the dance renew;<br>
 While music rolls in awful, solemn sound,<br>
-Heard in the distance, many leagues around.<br>
+Heard in the distance, many leagues around.
+
 Or turn to Tequendama’s awful steep,<br>
-See wild Bogota’s waters boldly leap,<br>
+See wild Bogota’s waters boldy leap,<br>
 Down from the lofty Andes’ heights of snow,<br>
 To flowery plains, where spring’s soft breezes blow:<br>
 ’Mid scenes of majesty unrival’d stand,<br>
@@ -99,7 +109,7 @@ Lo! in the North eternal winter reigns,<br>
 And binds the ocean in his icy chains;<br>
 Locked in the stupor of his cold embrace<br>
 All nature seems to sleep:—yet here we trace<br>
-Some signs of life—of joy, and happiness,<br>
+Some signs of life,—of joy, and happiness,<br>
 Some icy cottage of domestic bliss,<br>
 Where love sits smiling, (from the blast secure)<br>
 In native modesty,—with soul as pure,<br>
@@ -116,9 +126,10 @@ Renew’d in freshness sheds a sweet perfume;<br>
 Decked in pure robes of purple, white or green,<br>
 Adorned with flowrets bright:—O, lovely scene!<br>
 Melodious sounds of music, soft and sweet<br>
-Thrill through the air—its joyous welcome greet.<br>
+Thrill through the air,—it’s joyous welcome greet.<br>
 There autumn’s richest blessings crown the year,<br>
-And there the rose on beauty’s cheek appears.<br>
+And there the rose on beauty’s cheek appears.
+
 Our southern climes for mildness may compare,<br>
 With Italy, and France, whose gentle air<br>
 Became the subject of the Poet’s dream,<br>
@@ -131,3 +142,9 @@ There balmy sweets perfume the breath of morn,<br>
 And shady groves the noonday walks adorn;<br>
 While gentle zephyrs kiss the blushing flowers,<br>
 And healthful breezes cool the evening hours.<br>
+Our soil, with Eden’s garden would compare,<br>
+Nay more,—forbidden fruit was growing there;<br>
+But here the trees of life and knowledge stand reveal’d,<br>
+And free to all,—no poison is conceal’d<br>
+In wisdom’s fruit,—Our Eves may satisfy<br>
+Their souls with knowledge here; nor fear to die.
