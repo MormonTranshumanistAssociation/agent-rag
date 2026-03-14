@@ -55,10 +55,18 @@ sources:
     publication_year: 1840
     source_type: primary
     genre: historical_narrative
-    url: https://contentdm.lib.byu.edu/digital/collection/NCMP1820-1846/id/2825/
+    url: https://archive.org/details/latepersecutiono01prat
+    preferred_source_format: internet_archive_hocr_searchtext
+    verification_url: https://archive.org/download/latepersecutiono01prat/latepersecutiono01prat_hocr_searchtext.txt.gz
+    scan_url: https://contentdm.lib.byu.edu/digital/collection/NCMP1820-1846/id/2825/
     rights: public_domain
     priority: medium
-    ingest_status: cataloged_only
+    ingest_status: first_pass_ocr_sectioned
+    notes: >-
+      Conservative first-pass OCR review from Internet Archive hOCR search text,
+      segmented into introduction, preface, main narrative, letter to Austin A.
+      King, appendix, and author's advertisement. BYU scan remains a useful
+      verification source; should receive later second-pass proofreading.
 
   - id: dialogue-joseph-smith-devil-1844
     title: A Dialogue between Joseph Smith and the Devil

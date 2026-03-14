@@ -1,0 +1,15 @@
+# OCR lint report
+
+Issue count: 2
+
+## Line 1: `WARNIHra`
+
+- category: `proper_noun_or_archaism`
+- suggestion: `none`
+- context: `FOR SALE, THE “VOICE OF WARNIHra,” BY P. P. PRATT. A book of 216 pages; being an introduction to the doctrine of the “LATTERDAY SAINTS.” ALSO, THE •’MILLENIUM AND OTHER POEMS; To which is annexed A Treatise on the Regeneration and Eternal duration of Matter.” N. B. — Our books are to be obtained at our Meet- ings, and of our travelling Elders and other agents.`
+
+## Line 1: `ings`
+
+- category: `likely_spelling_error`
+- suggestion: `rings`
+- context: `FOR SALE, THE “VOICE OF WARNIHra,” BY P. P. PRATT. A book of 216 pages; being an introduction to the doctrine of the “LATTERDAY SAINTS.” ALSO, THE •’MILLENIUM AND OTHER POEMS; To which is annexed A Treatise on the Regeneration and Eternal duration of Matter.” N. B. — Our books are to be obtained at our Meet- ings, and of our travelling Elders and other agents.`

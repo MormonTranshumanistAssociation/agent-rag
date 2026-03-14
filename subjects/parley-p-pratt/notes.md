@@ -53,11 +53,11 @@ The clean corpus now includes all four Parley P. Pratt titles currently availabl
 - *The Autobiography of Parley Parker Pratt* — main chaptered body only; mixed-voice closing material and editorial appendix/transcriber matter excluded
 - *The Millennium and Other Poems* — segmented by preface, poem/treatise, and internal part/chapter structure, with poetic lineation preserved using `<br>` line breaks
 
-This is a much stronger bootstrap than the earlier seed excerpts. The remaining major corpus gaps are now concentrated in non-Gutenberg or scan-driven works. *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* are already present as conservative first-pass whole-work OCR reviews, while *Late Persecutions* remains the most important still-uningested primary title.
+This is a much stronger bootstrap than the earlier seed excerpts. The remaining major corpus work is now concentrated in second-pass proofreading and richer non-primary/context additions. *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* are already present as conservative first-pass whole-work OCR reviews, while *Late Persecutions* is now present as a conservative first-pass OCR-sectioned historical narrative.
 
 ## Good next steps
 
-- ingest *Late Persecutions* as a historical-narrative counterpoint once a clean OCR/text workflow is in place
+- perform second-pass proofreading on the OCR-derived *Late Persecutions* sections
 - perform second-pass proofreading on the OCR-derived *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* texts
 - use `raw/ocr/` + `raw/review/` as the staging area for remaining scan-driven works
 - introduce explicit edition metadata fields
