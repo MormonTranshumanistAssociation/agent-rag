@@ -4,7 +4,7 @@
   "priority": "primary",
   "description": "Document-oriented package for ElevenLabs native narration and RAG ingestion.",
   "recommended_ingestion_unit": "document",
-  "record_count": 86,
+  "record_count": 89,
   "source_file": "documents.jsonl",
   "canonical_manifest": "../../manifest.json",
   "canonical_corpus": "../../corpus.jsonl",
