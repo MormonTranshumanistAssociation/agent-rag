@@ -38,7 +38,10 @@ sources:
     url: https://contentdm.lib.byu.edu/digital/collection/NCMP1820-1846/id/2832/
     rights: public_domain
     priority: medium
-    ingest_status: cataloged_only
+    ingest_status: partial_ocr_review_prepared
+    notes: >-
+      BYU page-image source acquired. Raw OCR and a poetry-preserving review packet
+      are staged for the "The Millennium" section under raw/ocr/ and raw/review/.
 
   - id: late-persecutions-1840
     title: Late Persecutions of the Church of Jesus Christ of Latter-day Saints
