@@ -25,6 +25,14 @@ def test_normalize_ocr_text_can_preserve_linebreaks() -> None:
     assert normalized == "Roses are red,\nViolets are blue,\nfi ligatures appear here too.\n"
 
 
+def test_normalize_ocr_text_fixes_common_ocr_debris_patterns() -> None:
+    raw_text = "Mr.S. said «' in«-\nterpretation ^ should be cleaned.\nMr, S. agreed.\n( 4 )\n"
+
+    normalized = normalize_ocr_text(raw_text)
+
+    assert normalized == 'Mr. S. said " interpretation should be cleaned. Mr. S. agreed.\n'
+
+
 def test_prepare_ocr_review_packet_writes_normalized_text_candidate_and_prompt(tmp_path: Path) -> None:
     input_path = tmp_path / "raw.txt"
     input_path.write_text("Mis-\ntaken ﬂowers bloom.\n", encoding="utf-8")
@@ -50,6 +58,7 @@ def test_prepare_ocr_review_packet_writes_normalized_text_candidate_and_prompt(t
     assert "source_id: late-persecutions-1840" in candidate_text
     assert candidate_text.rstrip().endswith("Mistaken flowers bloom.")
     assert "Do not modernize the prose" in prompt_text
+    assert "Confidently normalize obvious OCR debris" in prompt_text
     assert "late-persecutions-chapter-01" in prompt_text
 
 

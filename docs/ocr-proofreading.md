@@ -38,6 +38,10 @@ This writes:
 - soft hyphens
 - hyphenated line-break artifacts such as `begin-\nning` → `beginning`
 - wrapped prose paragraphs (default mode)
+- stray OCR punctuation such as carets and duplicated quote marks
+- common honorific spacing glitches such as `Mr.S.` / `Mr, S.` → `Mr. S.`
+- simple page-number artifact lines such as `( 4 )`
+- punctuation debris inside broken words such as `in«-\nterpretation` → `interpretation`
 
 Use `--preserve-linebreaks` for poetry or line-based material.
 
@@ -46,7 +50,8 @@ Use `--preserve-linebreaks` for poetry or line-based material.
 Use a proofreader agent, skill, or human reviewer to:
 
 - correct obvious OCR mistakes conservatively
-- avoid modernizing diction, spelling, or punctuation
+- confidently infer intended words when the remaining marks are plainly OCR debris
+- avoid modernizing diction, spelling, or punctuation beyond removing that debris
 - preserve lineation when it matters
 - mark uncertain readings with `[[unclear]]`
 - keep editorial/non-authorial matter separated from the subject's own text

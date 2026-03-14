@@ -17,12 +17,28 @@ _LIGATURES = {
     "ﬆ": "st",
 }
 
+_QUOTE_NORMALIZATION = str.maketrans({
+    "«": '"',
+    "»": '"',
+    "“": '"',
+    "”": '"',
+    "‘": "'",
+    "’": "'",
+})
+
 
 def normalize_ocr_text(text: str, preserve_linebreaks: bool = False) -> str:
     normalized = text.replace("\r\n", "\n").replace("\r", "\n").replace("\xad", "")
+    normalized = normalized.translate(_QUOTE_NORMALIZATION)
     for source, target in _LIGATURES.items():
         normalized = normalized.replace(source, target)
 
+    normalized = re.sub(r"(?im)^\(\s*\d+\s*\)\s*$", "", normalized)
+    normalized = re.sub(r"(?im)^\[\s*\d+\s*\]\s*$", "", normalized)
+    normalized = re.sub(r"\^", "", normalized)
+    normalized = re.sub(r"\b(Mr|Mrs|Ms|Dr|Rev|St|Sec|No)[,.]\s*(?=[A-Z])", r"\1. ", normalized)
+    normalized = re.sub(r"[\"']{2,}", '"', normalized)
+    normalized = re.sub(r"(?<=\w)[\"']+-\n(?=\w)", "", normalized)
     normalized = re.sub(r"(?<=\w)-\n(?=\w)", "", normalized)
     normalized = re.sub(r"[ \t]+\n", "\n", normalized)
     normalized = re.sub(r"\n{3,}", "\n\n", normalized)
@@ -66,6 +82,7 @@ def render_proofread_prompt(
         "## Instructions\n\n"
         "Proofread the normalized OCR text conservatively.\n\n"
         "- Correct obvious OCR mistakes only.\n"
+        "- Confidently normalize obvious OCR debris instead of preserving meaningless noise verbatim.\n"
         "- Do not modernize the prose, spelling, punctuation, or theology.\n"
         "- Do not silently add content that is not supported by the source.\n"
         "- Mark genuinely uncertain readings with `[[unclear]]` instead of guessing.\n"
