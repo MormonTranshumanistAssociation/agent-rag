@@ -61,6 +61,33 @@ Use a proofreader agent, skill, or human reviewer to:
 - mark uncertain readings with `[[unclear]]`
 - keep editorial/non-authorial matter separated from the subject's own text
 
+## LLM-assisted second-pass proofreading
+
+After `prepare-ocr`, you can run an OpenAI-compatible frontier model over the review packet:
+
+```bash
+export AGENT_RAG_LLM_API_KEY=...
+export AGENT_RAG_LLM_MODEL=openai/gpt-5
+# optional: AGENT_RAG_LLM_BASE_URL=https://openrouter.ai/api/v1
+
+PYTHONPATH=src python -m agent_rag.cli proofread-ocr \
+  subjects/parley-p-pratt/raw/review/late-persecutions-main-narrative
+```
+
+This reads `candidate.md`, `proofread_prompt.md`, and `lint_report.json`, then writes:
+
+- `proofread.md` — front matter + LLM-corrected body
+- `proofread_manifest.json` — model/chunk metadata for the run
+
+Design goals of this step:
+
+- preserve archaisms and period spelling where they appear intentional
+- clean punctuation, hyphenation, and OCR noise when the intended reading is clear
+- split large documents into paragraph chunks so long works remain tractable
+- give the model local before/after context plus suspicious-token hints from lint output
+
+This step is meant for **second-pass adjudication**, not blind rewriting. Review the resulting `proofread.md` before promoting it into `clean/`.
+
 ## Why build our own proofreader workflow?
 
 The existing OCR/document-extraction skill is good for **getting text out of scans**, but historical corpus work needs a second layer specialized for:

@@ -6,6 +6,7 @@ from typing import Sequence
 
 from .export_targets import DEFAULT_EXPORT_TARGETS, EXPORT_TARGETS
 from .ocr_filter import prepare_ocr_review_packet
+from .ocr_proofreader import proofread_ocr_review_packet
 from .subject_pack import build_subject_pack, validate_subject_pack
 
 
@@ -47,6 +48,17 @@ def _build_parser() -> argparse.ArgumentParser:
     prepare_ocr_parser.add_argument("--source-type", default="primary")
     prepare_ocr_parser.add_argument("--composed-year", type=int, default=None)
     prepare_ocr_parser.add_argument("--preserve-linebreaks", action="store_true")
+
+    proofread_ocr_parser = subparsers.add_parser(
+        "proofread-ocr",
+        help="Use an OpenAI-compatible LLM to conservatively proofread an OCR review packet",
+    )
+    proofread_ocr_parser.add_argument("review_dir", type=Path)
+    proofread_ocr_parser.add_argument("--model", default=None)
+    proofread_ocr_parser.add_argument("--base-url", default=None)
+    proofread_ocr_parser.add_argument("--api-key", default=None)
+    proofread_ocr_parser.add_argument("--chunk-chars", type=int, default=6000)
+    proofread_ocr_parser.add_argument("--context-paragraphs", type=int, default=1)
 
     return parser
 
@@ -96,8 +108,20 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(f"Prepared OCR review packet -> {output_dir}")
         return 0
 
+    if args.command == "proofread-ocr":
+        output_path = proofread_ocr_review_packet(
+            args.review_dir,
+            model=args.model,
+            base_url=args.base_url,
+            api_key=args.api_key,
+            chunk_chars=args.chunk_chars,
+            context_paragraphs=args.context_paragraphs,
+        )
+        print(f"Proofread OCR review packet -> {output_path}")
+        return 0
+
     parser.error(f"Unknown command: {args.command}")
-    return 2
+
 
 
 if __name__ == "__main__":  # pragma: no cover
