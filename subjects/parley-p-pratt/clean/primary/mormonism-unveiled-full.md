@@ -13,7 +13,7 @@ selection_notes: >-
 ---
 MORMONISM UNVEILED!
 
-- “And all liars, shall have their part in the lake which burneth with fire and brimstone; which is the second death.” — Rev. xxi: 8.
+“And all liars, shall have their part in the lake which burneth with fire and brimstone; which is the second death.” — Rev. xxi: 8.
 
 “And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie.” — Rev. xxi: 27.
 
