@@ -49,6 +49,25 @@ def test_normalize_ocr_text_normalizes_whitespace_and_paragraph_breaks() -> None
     assert normalized == 'Hello world! “Quoted” text.\n\nNext paragraph; yes: indeed? Sure!\n'
 
 
+def test_normalize_ocr_text_converts_terminal_digit_one_to_question_mark_in_interrogative_context() -> None:
+    raw_text = 'They complain of our Society being very poor as to property; but have they never read in the New Testament that God had chosen the poor in this world, rich in faith, and heirs of the kingdom of God 1\nAnd when did poverty become a crime known to the law 1\n'
+
+    normalized = normalize_ocr_text(raw_text)
+
+    assert normalized == (
+        'They complain of our Society being very poor as to property; but have they never read in the New Testament that God had chosen the poor in this world, rich in faith, and heirs of the kingdom of God? '
+        'And when did poverty become a crime known to the law?\n'
+    )
+
+
+def test_normalize_ocr_text_keeps_terminal_digit_one_when_context_is_not_interrogative() -> None:
+    raw_text = 'Section 1\nAnd this paragraph continues without a question.\n'
+
+    normalized = normalize_ocr_text(raw_text)
+
+    assert normalized == 'Section 1 And this paragraph continues without a question.\n'
+
+
 def test_find_ocr_issues_flags_spelling_and_punctuation_suspicions() -> None:
     text = "Mr.S. said the fales prophet used in«-terpretation.\nGibralter was mentioned too.\n"
 

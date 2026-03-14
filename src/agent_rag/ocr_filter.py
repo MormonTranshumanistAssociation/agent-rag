@@ -76,6 +76,11 @@ _PAGE_ARTIFACT_RE = re.compile(r"^\(?\s*\d+\s*\)?$")
 _HONORIFIC_SPACING_RE = re.compile(r"\b(Mr|Mrs|Ms|Dr|Rev|St|Sec|No)[,.]\s*([A-Z])\.")
 _PUNCTUATION_NOISE_RE = re.compile(r"\b\S*[\^*_«»]+\S*\b")
 _ROMAN_RE = re.compile(r"^[IVXLCDM]+$", re.I)
+_TERMINAL_ONE_RE = re.compile(r"(?<!\w)1(?=(?:[\"')\]”’]*)?(?:\s+|$))")
+_INTERROGATIVE_CUE_RE = re.compile(
+    r"\b(?:who|what|when|where|why|how|did|do|does|is|are|was|were|have|has|had|can|could|would|should|will|shall)\b",
+    re.I,
+)
 
 _SPELLCHECKER = SpellChecker(distance=2)
 
@@ -168,11 +173,42 @@ def _smartify_quotes(text: str) -> str:
     return "".join(result)
 
 
+def _repair_terminal_digit_one_questions(text: str) -> str:
+    repaired: list[str] = []
+    last_index = 0
+
+    for match in _TERMINAL_ONE_RE.finditer(text):
+        index = match.start()
+        previous_nonspace = next((text[pos] for pos in range(index - 1, -1, -1) if not text[pos].isspace()), "")
+        if previous_nonspace and not (previous_nonspace.isalpha() or previous_nonspace in '”’"\')]}'):
+            continue
+
+        next_nonspace = next((text[pos] for pos in range(index + 1, len(text)) if not text[pos].isspace()), "")
+        if next_nonspace and not (next_nonspace.isupper() or next_nonspace in '”’"\')]}'):
+            continue
+
+        clause_start = max(text.rfind(marker, 0, index) for marker in (".", "?", "!", "\n"))
+        clause = text[clause_start + 1 : index].strip()
+        if not clause or not _INTERROGATIVE_CUE_RE.search(clause):
+            continue
+
+        repaired.append(text[last_index:index])
+        repaired.append("?")
+        last_index = index + 1
+
+    if last_index == 0:
+        return text
+    repaired.append(text[last_index:])
+    return "".join(repaired)
+
+
 def _normalize_typography(text: str) -> str:
     text = re.sub(r"-\s*—|—\s*-", " — ", text)
     text = re.sub(r"(?<=\w)——+(?=\w)", "—", text)
     text = re.sub(r"\s+([,.;:!?])", r"\1", text)
     text = re.sub(r"\s+—\s+", " — ", text)
+    text = _repair_terminal_digit_one_questions(text)
+    text = re.sub(r"\s+([,.;:!?])", r"\1", text)
     text = _smartify_quotes(text)
     text = re.sub(r"(?<=[A-Za-z0-9,.;:!?])“", " “", text)
     text = re.sub(r"”(?=[A-Za-z0-9])", "” ", text)
