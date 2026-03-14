@@ -191,79 +191,75 @@ Mr. La Roy Sunderland.
 
 These lines were composed by a gentleman who does not stand connected with the church of “L. D. Saints,” and were handed us just as our Pamphlet was going to press, and on account of the sentiments of truth, as well as the bold and independent spirit which they breathe, we are thankful for the opportunity of publishing them, for the edification of our readers.
 
-Adieu to honour, wealth and fame;
-
-And every worldly pleasure: I bid farewell to my good name;
-
+Adieu to honour, wealth and fame;<br>
+And every worldly pleasure:<br>
+I bid farewell to my good name;<br>
 For to obey my Saviour.
 
-I covet not that high esteem
-
-To which I did aspire; My Saviour’s love, shall be my theme;
-
+I covet not that high esteem<br>
+To which I did aspire;<br>
+My Saviour’s love, shall be my theme;<br>
 I care for nothing higher.
 
-Yes, if I could advance his praise,
+Yes, if I could advance his praise,<br>
+By works of my performing,<br>
+Among the Saints of latter days;<br>
+I would be called a “Mormon.”
 
-By works of my performing, Among the Saints of latter days;
-
-I would be called a “Mormon.” Although they commonly are call’d
-
-A poor deluded people: Their prophets, priests, and teachers, all,
-
+Although they commonly are call’d<br>
+A poor deluded people:<br>
+Their prophets, priests, and teachers, all,<br>
 Offscourings of the rabble.
 
-And were not all the saints of old
+And were not all the saints of old<br>
+Derided, by opposers<br>
+Of light, and truth. Which did unfold,<br>
+From Adam, down to Moses?
 
-Derided, by opposers Of light, and truth. Which did unfold,
-
-From Adam, down to Moses 7
-
-Yes, all the holy prophets were,
-
-With Christ, and his Apostles; Accounted as these “Mormons” are.
-
+Yes, all the holy prophets were,<br>
+With Christ, and his Apostles;<br>
+Accounted as these “Mormons” are.<br>
 False prophets and impostors.
 
-But truth is strong, and will prevail;
-
-For it proceeds from Heaven: It always did, and ever shall;
-
+But truth is strong, and will prevail;<br>
+For it proceeds from Heaven:<br>
+It always did, and ever shall;<br>
 By inspiration given.
 
-And when it doth their systems rub,
-
-Proud men become uneasy; And call the Master, Beelzebub,
-
+And when it doth their systems rub,<br>
+Proud men become uneasy;<br>
+And call the Master, Beelzebub,<br>
 And all his servants crazy.
 
-Thus all, in every age, who live
-
-Godly, in Christ the Saviour; Such base calumny shall receive,
-
+Thus all, in every age, who live<br>
+Godly, in Christ the Saviour;<br>
+Such base calumny shall receive,<br>
 From those they cannot favour.
 
-Not think, as they would have them think;
-
-Nor do, as they are doing: And blunder with them, on the brink
-
+Not think, as they would have them think;<br>
+Nor do, as they are doing:<br>
+And blunder with them, on the brink<br>
 Of everlasting ruin.
 
-Men still love darkness more than light,
+Men still love darkness more than light,<br>
+Because their deeds are evil:<br>
+And will declare that wrong is right —<br>
+Though it were from the devil.
 
-Because their deeds are evil: And will declare that wrong is right — Though it were from the devil.
-
-That midnight, the old carnal mind;
-
-Remains as dark as ever: And all the blind, that lead the blind.
-
+That midnight, the old carnal mind;<br>
+Remains as dark as ever:<br>
+And all the blind, that lead the blind,<br>
 Fall in the ditch together.
 
-Oh! how they earnestly contend;
+Oh! how they earnestly contend;<br>
+And still sink in the mire!<br>
+Their broken systems cannot mend<br>
+’Till purified by fire.
 
-And still sink in the mire! Their broken systems cannot mend’Till purified by fire.
+Columbian Bard.
+New-York, March 24, 1838.
 
-Columbian Bard. New-York, March 24, 1838. Just Published and for sale:
+Just Published and for sale:
 
 THE VOICE OF WARNING,
 

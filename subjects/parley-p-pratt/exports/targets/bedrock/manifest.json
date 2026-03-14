@@ -4,7 +4,7 @@
   "priority": "secondary",
   "description": "Chunk-oriented package for Bedrock or similar cloud-native retrieval backends.",
   "recommended_ingestion_unit": "chunk",
-  "record_count": 2581,
+  "record_count": 2582,
   "source_file": "chunks.jsonl",
   "canonical_manifest": "../../manifest.json",
   "canonical_corpus": "../../corpus.jsonl",
