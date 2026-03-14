@@ -1,0 +1,54 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "line_number": 6,
+      "token": "returz",
+      "category": "likely_spelling_error",
+      "suggestion": "return",
+      "context": "introduction—Location of the Ten Tribes—The way prepared—Their returz"
+    },
+    {
+      "line_number": 11,
+      "token": "ciorious",
+      "category": "likely_spelling_error",
+      "suggestion": "curious",
+      "context": "A ciorious theme the sacred muse inspires,<br>"
+    },
+    {
+      "line_number": 22,
+      "token": "1",
+      "category": "page_artifact",
+      "suggestion": null,
+      "context": "1"
+    },
+    {
+      "line_number": 29,
+      "token": "lone,*<br",
+      "category": "ocr_punctuation_noise",
+      "suggestion": "lone,<br",
+      "context": "What though Assyria’s captives long and lone,*<br>"
+    },
+    {
+      "line_number": 32,
+      "token": "Borealis",
+      "category": "proper_noun_or_archaism",
+      "suggestion": "Boreal",
+      "context": "Where pale Borealis sends his meteors forth 1!<br>"
+    },
+    {
+      "line_number": 105,
+      "token": "o’erwhelmed",
+      "category": "likely_spelling_error",
+      "suggestion": "overwhelmed",
+      "context": "His armies sunk, o’erwhelmed, to rise no more;<br>"
+    },
+    {
+      "line_number": 113,
+      "token": "centre",
+      "category": "likely_spelling_error",
+      "suggestion": "center",
+      "context": "Earth’s whole foundation to the centre bowed.<br>"
+    }
+  ]
+}
