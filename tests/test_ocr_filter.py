@@ -41,6 +41,14 @@ def test_normalize_ocr_text_normalizes_dashes_and_smart_quotes() -> None:
     assert normalized == 'He cried, “Beware — for d—d forms!”\n'
 
 
+def test_normalize_ocr_text_normalizes_whitespace_and_paragraph_breaks() -> None:
+    raw_text = 'Hello   world !  "Quoted"  text .\n\n\n\nNext  paragraph ;  yes :  indeed ?  Sure !\n'
+
+    normalized = normalize_ocr_text(raw_text)
+
+    assert normalized == 'Hello world! “Quoted” text.\n\nNext paragraph; yes: indeed? Sure!\n'
+
+
 def test_find_ocr_issues_flags_spelling_and_punctuation_suspicions() -> None:
     text = "Mr.S. said the fales prophet used in«-terpretation.\nGibralter was mentioned too.\n"
 

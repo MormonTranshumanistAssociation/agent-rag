@@ -134,7 +134,6 @@ def _is_allowed_word(token: str) -> bool:
 def _smartify_quotes(text: str) -> str:
     text = re.sub(r"(?<=\w)'(?=\w)", "’", text)
     result: list[str] = []
-    double_open = True
     for index, char in enumerate(text):
         if char not in {'"', "'"}:
             result.append(char)
@@ -144,14 +143,27 @@ def _smartify_quotes(text: str) -> str:
         next_char = text[index + 1] if index + 1 < len(text) else ""
         prev_nonspace = next((text[pos] for pos in range(index - 1, -1, -1) if not text[pos].isspace()), "")
         next_nonspace = next((text[pos] for pos in range(index + 1, len(text)) if not text[pos].isspace()), "")
-        is_opening = bool(next_nonspace and next_nonspace.isalnum() and (not prev_nonspace or prev_nonspace in "([{—<,;:.!?"))
         if char == '"':
-            result.append("“" if double_open else "”")
-            double_open = not double_open
+            is_opening = bool(
+                next_nonspace
+                and next_nonspace.isalnum()
+                and (not prev or prev.isspace() or prev in "([{—<")
+            )
+            is_closing = bool(
+                not next_nonspace
+                or next_nonspace in ",.;:!?)]}—"
+                or (prev and not prev.isspace() and prev not in "([{—<")
+            )
+            result.append("“" if is_opening and not is_closing else "”")
         else:
             if prev.isalnum() and next_char.isalnum():
                 result.append("’")
             else:
+                is_opening = bool(
+                    next_nonspace
+                    and next_nonspace.isalnum()
+                    and (not prev or prev.isspace() or prev in "([{—<")
+                )
                 result.append("‘" if is_opening else "’")
     return "".join(result)
 
@@ -159,9 +171,11 @@ def _smartify_quotes(text: str) -> str:
 def _normalize_typography(text: str) -> str:
     text = re.sub(r"-\s*—|—\s*-", " — ", text)
     text = re.sub(r"(?<=\w)——+(?=\w)", "—", text)
-    text = re.sub(r"\s+([,;:!?])", r"\1", text)
+    text = re.sub(r"\s+([,.;:!?])", r"\1", text)
     text = re.sub(r"\s+—\s+", " — ", text)
     text = _smartify_quotes(text)
+    text = re.sub(r"(?<=[A-Za-z0-9,.;:!?])“", " “", text)
+    text = re.sub(r"”(?=[A-Za-z0-9])", "” ", text)
     text = re.sub(r"([“‘])\s+", r"\1", text)
     text = re.sub(r"\s+([”’])", r"\1", text)
     return text
