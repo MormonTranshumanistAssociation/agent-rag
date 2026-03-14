@@ -77,9 +77,12 @@ _HONORIFIC_SPACING_RE = re.compile(r"\b(Mr|Mrs|Ms|Dr|Rev|St|Sec|No)[,.]\s*([A-Z]
 _PUNCTUATION_NOISE_RE = re.compile(r"\b\S*[\^*_«»]+\S*\b")
 _ROMAN_RE = re.compile(r"^[IVXLCDM]+$", re.I)
 _SENTENCE_END_RE = re.compile(r'^(?P<body>.*?)(?P<terminal>[1Il|7.;:!?])?(?P<trailer>["\')\]”’]*)$')
-_SENTENCE_START_RE = re.compile(r'^["“‘(\[]?[A-Z]')
+_INTERNAL_TERMINAL_RE = re.compile(r'(?<!\w)(?P<terminal>[1Il|7])(?P<space>\s+)(?=(?:["“‘(\[]?[A-Z]|\d+(?:st|nd|rd|th)ly\b))', re.I)
+_SENTENCE_START_RE = re.compile(r'^(?:["“‘(\[]?[A-Z]|\d+(?:st|nd|rd|th)ly\b)', re.I)
 _QUESTION_SEGMENT_RE = re.compile(
-    r'(?i)(?:^|[;:—]\s+|\b(?:but|and|or|nor|yet)\b\s+)(?:who|what|when|where|why|how)\b|(?:^|[;:—]\s+|\b(?:but|and|or|nor|yet)\b\s+)(?:do|does|did|is|are|was|were|have|has|had|can|could|would|should|will|shall|may|might|must)\b'
+    r'(?i)(?:^|[;:—]\s+|\b(?:but|and|or|nor|yet)\b\s+)(?:who|what|when|where|why|how)\b'
+    r'|(?:^|[;:—]\s+|\b(?:but|and|or|nor|yet)\b\s+)(?:do|does|did|is|are|was|were|have|has|had|can|could|would|should|will|shall|may|might|must)\s+(?:not\s+)?(?:the|a|an|this|that|these|those|we|you|he|she|they|i|it|there|one|any|all|every|some|many|much|such|what|which|who|whosoever|whatever)\b'
+    r'|\bwhether\b'
 )
 _EXCLAMATION_SEGMENT_RE = re.compile(r'(?i)^(?:["“‘(\[]*)?(?:o\b|what\s+(?:a|an)\b|how\s+\w+)')
 
@@ -200,6 +203,29 @@ def _apply_terminal_punctuation(text: str, punctuation: str) -> str:
     return f"{body}{punctuation}{trailer}"
 
 
+def _repair_internal_terminal_punctuation(text: str) -> str:
+    repaired: list[str] = []
+    last_index = 0
+
+    for match in _INTERNAL_TERMINAL_RE.finditer(text):
+        index = match.start("terminal")
+        clause_start = max(text.rfind(marker, 0, index) for marker in (".", "?", "!"))
+        clause = text[clause_start + 1 : index].strip()
+        force = _infer_sentence_force(clause)
+        if force == "statement":
+            continue
+        punctuation = "?" if force == "question" else "!"
+        repaired.append(text[last_index:index])
+        repaired.append(punctuation)
+        repaired.append(match.group("space"))
+        last_index = match.end()
+
+    if last_index == 0:
+        return text
+    repaired.append(text[last_index:])
+    return "".join(repaired)
+
+
 def _looks_like_sentence_boundary(current: str, next_line: str) -> bool:
     match = _SENTENCE_END_RE.fullmatch(current.strip())
     if not match:
@@ -244,10 +270,21 @@ def _reconstruct_sentence_candidates(lines: list[str]) -> list[str]:
 
 
 def _repair_sentence_terminal_punctuation(sentence: str) -> str:
-    force = _infer_sentence_force(sentence)
+    sentence = _repair_internal_terminal_punctuation(sentence)
+    match = _SENTENCE_END_RE.fullmatch(sentence.strip())
+    if not match:
+        return sentence
+
+    body = match.group("body").rstrip()
+    terminal = match.group("terminal") or ""
+    tail_start = max(body.rfind(marker) for marker in (".", "?", "!"))
+    tail = body[tail_start + 1 :].strip() if tail_start != -1 else body
+    force = _infer_sentence_force(tail)
     if force == "statement":
         return sentence
     punctuation = "?" if force == "question" else "!"
+    if terminal and terminal == punctuation:
+        return sentence
     return _apply_terminal_punctuation(sentence, punctuation)
 
 

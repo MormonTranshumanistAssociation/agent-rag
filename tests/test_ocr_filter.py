@@ -60,6 +60,25 @@ def test_normalize_ocr_text_converts_terminal_digit_one_to_question_mark_in_inte
     )
 
 
+def test_normalize_ocr_text_repairs_interrogative_subclauses_within_single_ocr_line() -> None:
+    raw_text = 'They complain of our Society being very poor as to property; but have they never read in the New Testament that God had chosen the poor in this world, rich in faith, and heirs of the kingdom of God 1 And when did poverty become a crime known to the law 1 4thly, Concerning free negroes and mulattoes.\n'
+
+    normalized = normalize_ocr_text(raw_text)
+
+    assert normalized == (
+        'They complain of our Society being very poor as to property; but have they never read in the New Testament that God had chosen the poor in this world, rich in faith, and heirs of the kingdom of God? '
+        'And when did poverty become a crime known to the law? 4thly, Concerning free negroes and mulattoes.\n'
+    )
+
+
+def test_normalize_ocr_text_repairs_whether_questions_with_ocr_terminal_digit() -> None:
+    raw_text = 'The woman then turning to Mr. S., inquired whether he professed to be Lord and Saviour 1 Do not smile gentle reader.\n'
+
+    normalized = normalize_ocr_text(raw_text)
+
+    assert normalized == 'The woman then turning to Mr. S., inquired whether he professed to be Lord and Saviour? Do not smile gentle reader.\n'
+
+
 def test_normalize_ocr_text_keeps_terminal_digit_one_when_context_is_not_interrogative() -> None:
     raw_text = 'Section 1\nAnd this paragraph continues without a question.\n'
 
