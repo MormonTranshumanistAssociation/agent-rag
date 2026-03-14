@@ -244,7 +244,7 @@ Of everlasting ruin.
 Men still love darkness more than light,<br>
 Because their deeds are evil:<br>
 And will declare that wrong is right —<br>
-Though it were from the devil.
+Though it were from the devil!
 
 That midnight, the old carnal mind;<br>
 Remains as dark as ever:<br>
