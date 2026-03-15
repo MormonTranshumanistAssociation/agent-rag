@@ -1,0 +1,1 @@
+Transcribe all legible text on this single scanned book page in reading order. Preserve line breaks exactly for verse lines and headings. Preserve archaisms and original punctuation/spelling. Do not modernize, summarize, or explain. Return only the transcription.
