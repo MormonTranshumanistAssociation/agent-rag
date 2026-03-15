@@ -1,0 +1,18 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "source_url": "https://contentdm.lib.byu.edu/digital/collection/NCMP1820-1846/id/2832/",
+  "source_dir": "subjects/parley-p-pratt/raw/scans/millennium-inheritance-of-the-saints-pages",
+  "page_count": 1,
+  "batch_size": 6,
+  "prompt_file": "prompt.txt",
+  "combined_file": "combined.md",
+  "batches": [
+    {
+      "batch_index": 1,
+      "pages": [
+        52
+      ],
+      "file": "batches/batch-001.md"
+    }
+  ]
+}

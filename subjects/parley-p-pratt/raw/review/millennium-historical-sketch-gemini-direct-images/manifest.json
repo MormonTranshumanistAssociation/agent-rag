@@ -1,0 +1,31 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "source_url": "https://contentdm.lib.byu.edu/digital/collection/NCMP1820-1846/id/2832/",
+  "source_dir": "subjects/parley-p-pratt/raw/scans/millennium-historical-sketch-pages",
+  "page_count": 8,
+  "batch_size": 6,
+  "prompt_file": "prompt.txt",
+  "combined_file": "combined.md",
+  "batches": [
+    {
+      "batch_index": 1,
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "file": "batches/batch-001.md"
+    },
+    {
+      "batch_index": 2,
+      "pages": [
+        37,
+        38
+      ],
+      "file": "batches/batch-002.md"
+    }
+  ]
+}
