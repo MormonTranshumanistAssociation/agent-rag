@@ -1,7 +1,0 @@
-{
-  "model": "gemini-3.1-pro-preview",
-  "image_path": "/Users/openclaw/Source/MormonTranshumanistAssociation/agent-rag/subjects/parley-p-pratt/raw/scans/millennium-the-millennium-pages/004-page-4.jpg",
-  "prompt_file": "prompt.txt",
-  "transcription_file": "transcription.md",
-  "response_file": "response.json"
-}
