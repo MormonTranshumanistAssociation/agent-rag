@@ -1,4 +1,4 @@
-4             THE MILLENNIUM.
+4                 THE MILLENNIUM.
 
 The roar of chariots armed, pressed on their rear
 In dread array, and filled their souls with fear:
