@@ -6,11 +6,28 @@ document_title: Author's Advertisement
 author: Parley P. Pratt
 composed_year: 1840
 source_type: primary
-selection_notes: Conservative first-pass OCR review from Internet Archive hOCR search text, sectioned for retrieval provenance; BYU scan remains a secondary verification source.
+selection_notes: Gemini 3.1 Pro direct PDF OCR transcription from Archive.org scan,
+  sectioned for retrieval provenance; promoted as the canonical OCR-derived clean
+  text and should still receive later spot-proofing.
 ---
+Author's Advertisement.
 
-# Author's Advertisement
+FOR SALE, THE
 
-FOR SALE, THE « VOICE OF WARNIHra,” BY P. P. PRATT.
+"VOICE OF WARNING,"
 
-A book of 216 pages; being an introduction to the doctrine of the “LATTERDAY SAINTS.” ALSO, THE •’MILLENIUM AND OTHER POEMS; To which is annexed A Treatise on the Regeneration and Eternal duration of Matter.” N. B. — Our books are to be obtained at our Meetings, and of our travelling Elders and other agents.
+BY P. P. PRATT.
+
+A book of 216 pages ; being an introduction to the doctrine of the
+
+"L A T T E R D A Y  S A I N T S ."
+
+ALSO, THE
+
+"MILLENIUM AND OTHER POEMS ;
+
+To which is annexed
+
+A Treatise on the Regeneration and Eternal duration of Matter."
+
+N. B.—Our books are to be obtained at our Meetings, and of our travelling Elders and other agents.

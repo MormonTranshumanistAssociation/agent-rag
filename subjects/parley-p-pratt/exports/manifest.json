@@ -4,7 +4,7 @@
   "alias_count": 4,
   "source_count": 10,
   "document_count": 121,
-  "chunk_count": 3224,
+  "chunk_count": 3225,
   "chunk_size": 700,
   "chunk_overlap": 120,
   "system_prompt": "prompts/system.md"

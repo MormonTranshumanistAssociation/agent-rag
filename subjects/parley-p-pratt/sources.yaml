@@ -23,13 +23,16 @@ sources:
     source_type: primary
     genre: polemic
     url: https://archive.org/details/mormonismunveile01prat
+    preferred_source_format: gemini_direct_pdf_ocr
+    verification_url: https://archive.org/download/mormonismunveile01prat/mormonismunveile01prat.pdf
     rights: public_domain
     priority: medium
-    ingest_status: first_pass_ocr_ingested
+    ingest_status: gemini_direct_ocr_ingested
     notes: >-
-      Archive.org OCR text staged under raw/ocr/ and raw/review/, then ingested as
-      a conservative first-pass whole-work clean document. Suitable for retrieval,
-      but should receive a later second proofread and possible finer segmentation.
+      Gemini 3.1 Pro direct PDF OCR transcription from the Archive.org scan is now
+      the canonical OCR-derived clean text in the corpus. Stronger than the older
+      OCR cleanup attempt, but still should receive later spot-proofing and
+      possible finer segmentation.
 
   - id: millennium-and-other-poems-1840
     title: The Millennium and Other Poems
@@ -56,17 +59,18 @@ sources:
     source_type: primary
     genre: historical_narrative
     url: https://archive.org/details/latepersecutiono01prat
-    preferred_source_format: internet_archive_hocr_searchtext
-    verification_url: https://archive.org/download/latepersecutiono01prat/latepersecutiono01prat_hocr_searchtext.txt.gz
+    preferred_source_format: gemini_direct_pdf_ocr
+    verification_url: https://archive.org/download/latepersecutiono01prat/latepersecutiono01prat.pdf
     scan_url: https://contentdm.lib.byu.edu/digital/collection/NCMP1820-1846/id/2825/
     rights: public_domain
     priority: medium
-    ingest_status: first_pass_ocr_sectioned
+    ingest_status: gemini_direct_ocr_sectioned
     notes: >-
-      Conservative first-pass OCR review from Internet Archive hOCR search text,
-      segmented into introduction, preface, main narrative, letter to Austin A.
-      King, appendix, and author's advertisement. BYU scan remains a useful
-      verification source; should receive later second-pass proofreading.
+      Gemini 3.1 Pro direct PDF OCR transcription from the Archive.org scan is now
+      the canonical OCR-derived clean text in the corpus, segmented into
+      introduction, preface, main narrative, letter to Austin A. King, appendix,
+      and author's advertisement. BYU scan remains a useful verification source;
+      should still receive later spot-proofing.
 
   - id: dialogue-joseph-smith-devil-1844
     title: A Dialogue between Joseph Smith and the Devil
@@ -75,14 +79,16 @@ sources:
     source_type: primary
     genre: satire
     url: https://archive.org/details/dialoguebetw188401prat
+    preferred_source_format: gemini_direct_pdf_ocr
+    verification_url: https://archive.org/download/dialoguebetw188401prat/dialoguebetw188401prat.pdf
     rights: public_domain
     priority: low
-    ingest_status: first_pass_ocr_ingested
+    ingest_status: gemini_direct_ocr_ingested
     notes: >-
-      Archive.org OCR text staged under raw/ocr/ and raw/review/, then ingested as
-      a conservative first-pass whole-work clean document. Registered with an
-      Archive.org scan rather than a tertiary reference page; some readings may
-      deserve later second-pass proofing against the scan.
+      Gemini 3.1 Pro direct PDF OCR transcription from the Archive.org scan is now
+      the canonical OCR-derived clean text in the corpus. Stronger than the older
+      OCR cleanup attempt, but should still receive later spot-proofing against
+      the scan.
 
   - id: key-to-theology-1855
     title: Key to the Science of Theology

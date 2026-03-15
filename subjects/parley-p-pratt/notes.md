@@ -53,12 +53,12 @@ The clean corpus now includes all four Parley P. Pratt titles currently availabl
 - *The Autobiography of Parley Parker Pratt* — main chaptered body only; mixed-voice closing material and editorial appendix/transcriber matter excluded
 - *The Millennium and Other Poems* — segmented by preface, poem/treatise, and internal part/chapter structure, with poetic lineation preserved using `<br>` line breaks
 
-This is a much stronger bootstrap than the earlier seed excerpts. The remaining major corpus work is now concentrated in second-pass proofreading and richer non-primary/context additions. *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* are already present as conservative first-pass whole-work OCR reviews, while *Late Persecutions* is now present as a conservative first-pass OCR-sectioned historical narrative.
+This is a much stronger bootstrap than the earlier seed excerpts. The corpus now combines Gutenberg-derived clean texts where available with Gemini 3.1 Pro direct OCR for the remaining scan-dependent primary works. *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* are now present as Gemini-derived whole-work clean texts, while *Late Persecutions* is present as a Gemini-derived sectioned historical narrative.
 
 ## Good next steps
 
-- perform second-pass proofreading on the OCR-derived *Late Persecutions* sections
-- perform second-pass proofreading on the OCR-derived *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* texts
+- perform spot-proofing / correction passes on the Gemini-derived *Late Persecutions* sections
+- perform spot-proofing / correction passes on the Gemini-derived *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* texts
 - use `raw/ocr/` + `raw/review/` as the staging area for remaining scan-driven works
 - introduce explicit edition metadata fields
 - add duplicate-detection across overlapping editions
