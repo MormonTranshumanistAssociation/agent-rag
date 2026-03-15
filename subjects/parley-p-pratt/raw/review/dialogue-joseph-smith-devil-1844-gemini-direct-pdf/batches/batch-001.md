@@ -1,0 +1,222 @@
+[[page 1]]
+A DIALOGUE
+
+BETWEEN
+
+JOSEPH SMITH
+
+AND
+
+THE DEVIL.
+
+NEW YORK HERALD, 1844.
+
+SALT LAKE CITY:
+JOS. HYRUM PARRY & CO.
+1884.
+
+[[page 2]]
+B.Y.U. Library
+Gift of Mrs. J.W. Tobrason &
+M.H. Clark in memory of
+Mon Sophia A. Pakard
+Call
+No.
+
+[[page 3]]
+A DIALOGUE
+
+BETWEEN
+
+JOSEPH SMITH
+
+AND
+
+THE DEVIL.
+
+NEW YORK HERALD 1844
+
+SALT LAKE CITY:
+JOS. HYRUM PARRY & CO.
+1884.
+
+[[page 4]]
+UPE
+
+[[page 5]]
+A DIALOGUE
+
+BETWEEN
+
+JOSEPH SMITH AND THE DEVIL.
+
+[Enter Devil with a bundle of handbills, which he is in the act of posting up.]
+
+WANTED IMMEDIATELY!
+
+All the liars, swindlers, thieves, robbers, incendiaries, murderers, cheats, adulterers, harlots, blackguards, gamblers, bogus makers, idlers, busy bodies, pickpockets, vagabonds, filthy persons, hireling clergy and their followers, and all other infidels and rebellious, disorderly persons, for a crusade against Joseph Smith and the Mormons! Be quick, be quick, I say, or our cause will be ruined and our kingdom overthrown by that d—d fool of an impostor and his associates, for even now all earth and hell is in a stew.
+
+Joseph Smith happens to be passing, and hails his majesty:
+
+Good morning, Mr. Devil. How now, you seem to be much engaged; what news have you got there?
+
+MR. DEVIL.—Slipping his bills into his pocket with a low bow: Oh! good morning, Mr. Smith; hope you are well,
+
+[[page 6]]
+sir. Why, I—I was just out on a little business in my line. Or, finally, to be candid, I was contriving a fair and honorable warfare against you and your imposition, wherein piety is outraged and religion greatly hindered in its useful course. For, to be bold, sir—and I despise anything underhanded—I must tell you to your face that you have made more trouble than all the ministers or people of my whole dominion have for ages past.
+
+MR. SMITH.—Trouble! What trouble have I caused your majesty? I certainly have endeavored to treat you and all other persons in a friendly manner, even my worst enemies, and I always aim to fulfil the "Mormon" creed, and that is, to mind my own business exclusively. Why should this trouble you, Mr. Devil?
+
+MR. DEVIL.—Ah, your own busines, indeed! I know not what you may consider your business, it is so very complicated; but I know what you have done and what you are aiming to do. You have disturbed the quiet of Christendom, overthrown churches and societies, you have dared to call into question the truth and usefulness of old and established creeds, which have stood the test of ages, and have even caused tens of thousands to come out in open rebellion, not only against wholesome creeds, established forms and doctrines, well-approved and orthodox, but against some of the most pious, learned, exemplary and honorable clergy, whom both myself and all the world love, honor and esteem, and this is not all. But you are causing many persons to think who never thought before, and you would fain put the whole world a thinking, and
+
+[[page 7]]
+then where will true religion and piety be? Alas! they will have no place among men, for if men keep such a terrible thinking and reasoning as they begin to do, since you commenced your business, as you call it, they never will continue to uphold the good old way in which they have jogged along in peace for so many ages, and thus, Mr. Smith, you will overthrow my kingdom and leave me not a foot of ground on earth, and this is the very thing you aim at. But I, sir, have the boldness to oppose you by all the lawful means which I have in my power.
+
+MR. SMITH.—Really, Mr. Devil, your majesty has of late become very pious. I think some of our Christian brethren have greatly misrepresented you. It is generally reported by them that you are opposed to religion. But—
+
+MR. DEVIL.—It is false; there is not a more religious and pious being in the world than myself, nor a being more liberal minded. I am decidedly in favor of all creeds, systems and forms of Christianity, of whatever name and nature; so long as they leave out that abominable doctrine which caused me so much trouble in former times, and which, after slumbering for ages, you have again revived; I mean the doctrine of direct communication with God, by new revelation. This is hateful, it is impious, it is directly opposed to all the divisions and branches of the Christian church, I never could bear it. And for this very cause, I helped to bring to condign punishment all the prophets and apostles of old, for while they were suffered to live with this gift of revelation, they were always exposing and slandering me, and all other
+
+[[page 8]]
+good pious men in exposing our deeds and purposes, which they called wicked, but we consider as the height of zeal and piety; and when we killed them for these crimes of dreaming, prophesying, and vision-seeing, they raised the cry of persecution, and so with you miserable, deluded Mormons.
+
+MR. SMITH.—Then, your most Christian majesty is in favor of all other religions but this one, are you?
+
+MR. DEVIL.—Certainly, I am fond of praying, singing, church-building, bell-ringing, going to meeting, preaching, and withal, I have quite a missionary zeal. I like, also, long faces, long prayers, long robes, and learned sermons; nothing suits me better than to see people who have been for a whole week oppressing their neighbor, grinding the face of the poor, walking in pride and folly, and serving me with all their heart, I say nothing suits me better, Mr. Smith, than to see these people go to meeting on Sunday, with a long religious face on, and to see them pay a portion of their ill-gotten gains for the support of a priest, while he and his hearers pray with doleful groans and awful faces, saying: "Lord, we have left undone the things we ought to have done, and done the things we ought not;" and then when service is ended, see them turn to their wickedness and pursue it greedily all the week, and the next Sabbath repeat the same things. Now, be candid, Mr. Smith, do you not see that these and all others, who have a form and deny the power, are my good Christian children, and that their religion is a help to my cause?
+
+[[page 9]]
+MR. SMITH.—Certainly, your reasoning is clear and obvious as to these hypocrites, but you would not be pleased with people getting converted either at camp meeting or somewhere else, and then putting their trust in that conversion, and in free grace to save them—would you not be opposed to this?
+
+MR. DEVIL.—Why should I have any objection to that kind of religion, Mr. Smith? I care not how much they get converted, nor how much they cry Lord! Lord! nor how much they trust to free grace to save them, so long as they do not do the works that their God has commanded them. I am sure of them at last, for you know all men are to be judged according to their deeds. What does their good old Bible say? Does it not say, "Not every one that saith Lord, Lord, shall enter into my kingdom, but he that doeth the will of my Father which is in heaven." No, no, Mr. Smith, I am not an enemy to religion, and especially to the modern forms of Christianity, so long as they deny the power, they are a help to my cause: see how much discord, division, hatred, envy, strife, lying, contention, blindness, and even error and bloodshed has been produced as the effect of these very systems. By these means I gain millions to my dominion, while at the same time we enjoy the credit of being pious Christians; but you, Mr. Smith, you are my enemy, my open and avowed enemy; you have dared, in a sacreligious manner to tear the veil from all these fine systems, and to commence an open attack upon my kingdom, and this even when I had almost all Christendom,
+
+[[page 10]]
+together with the clergy and gentlemen of the press in my favor. How dare you venture thus to commence a revolution, without reverse, and without aid or succor and in the midst of innumerable hosts of my subjects?
+
+MR. SMITH.—Why sir, in the first place, I knew that I had the truth on my side, and that your systems and forms of Christianity were so manifestly corrupt that one had only to lift the veil from your fooleries on one side and to present plain and reasonable truth on the other, and the eyes of the people could at once distinguish the difference so clearly that except they chose darkness rather than light, they would leave your ranks and come over to truth. For instance, what is easier than to show from the history of the past, that a religion of direct revelation was the only system ever instituted by the Lord, and the only one calculated to benefit mankind? What is easier than to show that this system saved the church from flood, famine, flames, wars, division, bondage, doubt and darkness, many times, and that it is the legitimate way and manner of God's government of His own peculiar people in all ages and dispensations.
+
+MR. DEVIL.—To be candid with you, Mr. Smith, I must own that what you have now said, neither myself nor my most able ministers have been able to gainsay by any argument or fact. But then you must recollect that tradition and custom, together with fashion and popular clamor, have in all ages had more effect than plain fact and sound reason. Hence, you see we are yet safe so long as we continue to cry from press and pulpit, and in
+
+[[page 11]]
+Sunday schools, that all these things are done away and no longer needed. In this way, though God may speak, they will not hear; angels may minister, and they will not believe; visions may reveal, and they will not be enlightened; prophets may lift their voice, and their warnings pass unheeded; so you see we still have them as safe as we had the people in olden time. God can communicate no message to them which will be examined or heard with any degree of credence or candor. So, for all the good they get from God, all communication being cut off, they might as well be without a God. Thus, you see, I have full influence and control of the multitude by a means far more effectual than argument or reason, and I even teach them that it is a sin to reason, think or investigate, as it would disturb the even tenor of their pious breathings and devout groans and responses. Mr. Smith, you must be extremely ignorant of human nature, as well as of the history of the past, to presume that reason and truth would have much effect with the multitude. Why, sir, look how effectually we warded off the truth at Ephesus when Paul attempted to address them in the theatre. Strange that with all these examples before you, you should venture to raise the hue and cry which has so oft been defeated, and this with no better weapons on your side than reason and truth. Indeed, you may thank my Christian spirit of forbearance that you have escaped so far without a gird-iron; but take care for the future, I may not always be so mild.
+
+[[page 12]]
+MR. SMITH.—But why is your majesty so highly excited against me and my plans of operation, seeing that you consider that you have the multitude perfectly safe, and why so enraged and so fearful of the consequences of my course, and the effects of my weapons, while at the same time you profess to despise them as weak and powerless? Alas, it is too true that you have the multitude safe to all appearance at present, and that truth can seldom reach them; why not then be content and leave me to pursue my calling in peace? I can hardly hope to win to the cause of truth any but the few who think, and these have ever been troublesome to your cause.
+
+MR. DEVIL.—True, but then you are, in spite of all my efforts, and that of my fellows, daily thinning our ranks by adding to the number of those who think, and such a thinking is kept up that we are often exposed in some of our most prominent plans, and are placed in an awkward predicament, and who knows what defeat, disgrace and dishonor may befall the pious cause if you are suffered to continue your rebellious course.
+
+MR. SMITH.—But, Mr. Devil, why, with all these other advantages on your side, do you resort to such mean, weak, and silly fabrications as the Spaulding story? You profess to be a gentleman, a Christian and a clergyman, and you ought, for your own sake, and for the sake of your cause, to keep up outward appearances of honor and fairness. And now, Mr. Devil, tell the truth for once; you know perfectly well that your Spaulding story, in which you represented me as an imposter, in connection
+
+[[page 13]]
+with Sidney Rigdon, and that we were engaged in palming Solomon Spaulding's romance upon the world as the Book of Mormon, is a lie, a base fabrication, without a shadow of truth; and you know that I found the original records of the Nephites, and translated and published the Book of Mormon from them, without ever having heard of the existence of Spaulding, or his romance, or of Sidney Rigdon, either. Now, Mr. Devil, this was a mean, disgraceful and underhanded trick in you, and one of which you have reason to be ashamed.
+
+MR. DEVIL.—Well, Mr. Smith, to be candid, I acknowledge that what you say is true, and that it was not the most honorable course in the world. But it was you who commenced the war, by publishing that terrible book which we readily recognized as a complete expose of all our false and corrupt Christianity, not even keeping back the fact that we had continued during the dark ages to rob the scriptures of their plainness, and we feel the utmost alarm and excitement, and without much reflection, in the height of passion, we called a hasty council of the clergy and editors, and other rascals in Plainesville, Ohio, and thinking that almost any means was lawful in war, we invented the Spaulding story, and fathered it upon the poor printer, Howe, of Plainsville, although Dr. Hulbert (thanks to my aid) was its real author. But Mr. Smith, mark one thing, we had not a face so hard, nor a conscience so abandoned, as to publish this Spaulding story at the first as a positive fact; we only published it as a conjecture, a mere probability, and this you know we
+
+[[page 14]]
+had a right to do; without once thinking of the amount of evil it would eventually accomplish. But, sir, it was some of my unfortunate clergymen who, more reckless, hardened and unprincipled than myself, have ventured to add to each edition of this story, till, at last, without my aid or consent, they have set it down for a positive fact that Solomon Spaulding, Sidney Rigdon and yourself have made up the Book of Mormon out of a romance. Now, Mr. Smith, I am glad of this interview with you, as it gives me the opportunity of clearing up my character. I acknowledge with shame that I was guilty of a mean act in helping to hatch up and publish the Spaulding story as a probability, and that I associated with rascals far beneath my dignity, either as a sovereign prince or a religious minister, or even as an old, honorable and experienced devil, and for this I beg your pardon. But, really, I must deny the charge of having assisted in making the additions which have appeared in the later editions of that story, in which my former probabilities and mean conjectures are set down for positive facts. No, Mr. Smith, I had no hand in a trick so low and mean; I despise it—as the work of priests and editors alone, without my aid or suggestion, and I do not believe that even the meanest young devils in our dominion would have stooped to such an act.
+
+MR. SMITH.—Well I must give your majesty some credit for once at least, if what you say is true, but how can you justify your conduct in dishonoring yourself so far as to stoop to the level of the hireling clergy and their
+
+[[page 15]]
+followers, in still making use of this humbug story (which you affect to despise), in order to still blind the eyes of the people in regard to the origin of the Book of Mormon?
+
+MR. DEVIL.—Oh! Mr. Smith, it does take so readily among the pious of all sects that it seems a pity to spoil the fun, and I cannot resist the temptation of carrying out the joke, now it is so well rooted in their minds. And you can't think how we devils shake our sides with laughter when we get up in the gallery in some fine church, put on our long face, and assist in singing, and in the devout responses; this done, the Spaulding story is gravely told from the pulpit, while the pious old clergyman wears a face as long as that of Balaam's beast. All is swallowed down for solid truth by the gaping multitude, while we hang our heads behind the screen and laugh and wink at each other in silence, as anything overheard would disturb their worship, and, as bad as I am, I never wish to disturb those popular modes of worship, which decency requires us to respect. So, you see, Mr. Smith, we have our fun to ourselves at your expense; but, after all, we do not mean any hurt by it, although I must acknowledge, upon the whole, it serves our purpose.
+
+MR. SMITH.—Well, we will drop this subject, as I want to inquire about some of your other stories which have had an extensive circulation by means of your editors and priests. For instance, there is the story of my attempting to walk on the water and getting drowned; the numerous stories of my attempting to raise the dead, as a
+
+[[page 16]]
+mere trick of imposition, and getting detected in it; and the stories of my attempting to appear as an angel, and getting caught and exposed in the same; and, besides this, you have me killed by some means every little while. Now, you old hypocrite, you know that none of these things ever happened, or any circumstances out of which to make them; and that so far from this I deny the principle of a man's working miracles, either real or pretended, as a proof of his mission, and contend that miracles, if wrought at all, were wrought for benevolent purposes, and without being designed to convince the unbeliever. Why, then, do you resort to such silly stories in your opposition to me, seeing that you have many other advantages? Not that I would complain of such weak opposition, as if it were calculated to hinder my progress, but rather to mention it as something well calculated to injure your own cause, by betraying your weakness, folly and meanness.
+
+MR. DEVIL.—Ha, ha, ha, he, he! Oh! Mr. Smith, I just put out these stories for a joke, in order to have my own fun, and without the most distant idea that any being on earth would be so silly as to give any credence to them; but judge my surprise and joy when I found priests, editors and people so depraved in their judgment and tastes, so in love with lies, and so ready to catch at everything against their common enemy, as they call you, that these jocose stories of ours actually took in their credulous craniums for grave truths, and were passed about by them and sought after and swallowed by the multitude as
+
+[[page 17]]
+greedily as a young robin swallows a worm when it is dropped into its mouth, which is stretched at full width, while its eyes are closed. So you see, Mr. Smith, that without meaning any particular harm to you, I have my fun, and am, besides, so unexpectedly fortunate as to reap great advantages from circumstances where I had neither expected nor calculated. So I hope you will at least bear my folly, nor set down aught in malice, where no malice was intended. You know we devils are poor, miserable creatures at best, and were it not for our fun and our gambling, and our religious exercises, we would have nothing to kill time.
+
+MR. SMITH.—Well, I see plainly you will have to creep out somehow or other, rather than bear the disgrace and stigma which your conduct would seem to deserve. But forgetting the past, let me enquire what course you intend to pursue in the future, and whether this warfare between you and me will still be prosecuted? And if so, what course do you intend to pursue hereafter? You know my course. I have long since taken the field at the head of a mere handful of brave patriots, who are true as the polar stars, and firm as the rock of Gibralter. They laugh at and despise your silly stories, and with nothing but a few plain, simple weapons of truth and reason, aided by revelation, we boldly make war upon your whole dominion, and will never quit the field, dead or alive, till we win the battle, and deprive you of every foot of ground you possess. This is our purpose, and although your enemy, I am bold and generous enough to declare it. So,
+
+[[page 18]]
+you see, I am not for taking any unwary advantage, notwithstanding all your pious tricks upon me and the public.
+
+MR. DEVIL.—Mr. Smith, I am too much of a gentleman not to admire your generous frankness and your boldness, and too much of a Christian not to appreciate your honesty; but as you commenced this war, and I only acted at first on the defensive, with the pure motive of defending my kingdom, I think this ought, in some degree at least, to excuse the means I have made use of; and that you may have no reason to complain in future, I will now fully open to you the plan of my future campaign: Here (pulling out his bundle of handbills) is what I was doing this morning when by chance we met, and by the reading of which you will see my course. Heretofore I have endeavored to throw contempt upon your course, in hopes to smother it and keep it under, as something beneath the notice of us well informed Christians. For this cause I have generally caused it to be represented that you were a very ignorant, silly man, and that your followers were made up of the unthinking and vulgar, and not worthy of notice. But the fact is, you have made such rapid strides, and have poured forth such a torrent of intelligence, and gathered such a host of talented and thinking men around you, that I can no longer conceal these facts under a bushel of burning lies, and therefore I now change my purposes and my manner of attack. I shall endeavor to magnify you and your success from this time forward, and to make you appear as much
+
+[[page 19]]
+larger than the reality as you have heretofore fallen short. If my former course has excited contempt and caused you to be despised and thus kept you out of notice, my future course will be to excite jealousy, fear and alarm, till all the world is ready to arise and crush you as a legion of Sampsons, commanded by Bonaparte. This, I think, will be more successful in putting you down than the ignoble course I have heretofore taken, so prepare for the worst.
+
+MR. SMITH.—I care as little for your magnifying powers as I have heretofore done for your contempt; in fact, I will endeavor to go ahead to that degree that what you will say in regard to my great influence and power, though intended by you for falsehood, shall prove to be true, and by so doing I shall be prepared to receive those whom you may excite against me, and to give them so warm a reception that they will never discover your intended falsehood, but will find all your representations of my greatness to be a reality—so do your worst. I defy you.
+
+MR. DEVIL.—Well, time will determine whether the earth is to be governed by a prophet and under the sway of truth, or whether myself and my Christian friends will still prevail; but remember, Mr. Smith, remember, I beseech you, for your own good, beware what you are doing. I have the priests and editors with a few exceptions, under my control, together with wealth, popularity and honor. Count well the cost before you again plunge into this warfare. Good-bye, Mr. Smith, I must be away to raise my recruits and prepare for a campaign.
+
+[[page 20]]
+MR. SMITH.—Good bye to your majesty.
+
+(They both touch hats and turn away.)
+
+MR. DEVIL.—(Recollecting himself and suddenly turning back) O! say, Mr. Smith, one word more if you please (in a low and confidential tone, with his mouth to his ear), after all, what is the use of parting as enemies; the fact is, you go in for the wheat and I for the tares. Both must be harvested; are we not fellow laborers? I can make no use of the wheat, nor you of the tares even if we had them; we each claim our own, I for the burning, you for the barn. Come then, give the poor old Devil his due, and lets be friends.
+
+MR. SMITH.—Agreed; I neither want yours, nor you mine—a man free from prejudice will give the devil his due. Come, here is the right hand of fellowship, you to the tares, I to the wheat. (They shake hands cordially.)
+
+MR. DEVIL.—Well, Mr. Smith, we have talked a long while, and are agreed at last—you are a noble and generous fellow, and would not bring a railing accusation against even a poor old devil, nor cheat him out of a cent. Come, it is a warm day, and I feel as though it is my treat; let us go down to Mammy Brewer's cellar and take something to drink.
+
+MR. SMITH.—Agreed, Mr. Devil; you appear very generous just now.
+
+(They enter the cellar together.)
+
+MR. DEVIL.—Good morning, Mrs. Brewer, I make you acquainted with my good friend, Mr. Smith, the Prophet.
+
+[[page 21]]
+LANDLADY.—Why, Mr. Devil, is that you? Sit down, you're tired; but you don't say that this is Mr. Smith, your mortal enemy? I am quite surprised. What will you have, gentlemen, for if you can drink together, I think all the world ought to be friends.
+
+MR. DEVIL.—As we are both temperance men and ministers, I think perhaps a glass of spruce beer apiece will be all right; what say you, Mr. Smith?
+
+MR. SMITH.—As you please, your majesty.
+
+(They take the beer.)
+
+MR. DEVIL.—(Holding up glass) Come, Mr. Smith, your good health, I propose to offer a toast.
+
+MR. SMITH.—Well, proceed.
+
+MR. DEVIL.—Here's to my good friend, Joseph Smith, may all sorts of ill luck befall him, and may he never be suffered to enter my kingdom, either in time or eternity, for he would almost make me forget that I am a devil and make a gentleman of me, while he gently overthrows my government at the same time that he wins my friendship.
+
+MR. SMITH.—Here's to his Satanic majesty; may he be driven from the earth, and be forced to put to sea in a stone canoe with an iron paddle, and may the canoe sink, and a shark swallow the canoe and its royal freight, and an alegator swallow the shark, and may the alligator be bound in the northwest corner of hell, the door be locked, the key lost, and a blind man hunting for it.
+
+[[page 22]]
+
+[[page 23]]
+
+[[page 24]]
+ARE WE OF ISRAEL?
+
+A RESEARCH INTO THE
+
+ISRAELITISH LINEAGE of the LATTER-DAY SAINTS,
+
+BY ELDER GEORGE REYNOLDS.
+
+PRICE 20 CENTS.
+
+Items of Church History.
+
+The Gift of the Holy Ghost
+
+AND
+
+The Government of God.
+
+Articles written by the
+
+PROPHET JOSEPH SMITH.
+
+Compiled in one Pamphlet. Price 15 Cents.
+
+Guide to Salt Lake City,
+
+AND ITS ENVIRONS.
+
+Containing Illustrations and descriptions of Principal Places of interest to Tourists: also interesting Information and Historical data in regard to Utah and its People.
+
+PRICE 25 CENTS.
+
+For sale by all Booksellers, or will be sent postpaid to any address on receipt of the price. (Postage stamps taken.)
+
+JOS. HYRUM PARRY & CO.,
+Printers and Publishers,
+26 South Main St., Salt Lake City.

@@ -1,0 +1,16 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "source_url": "https://archive.org/download/dialoguebetw188401prat/dialoguebetw188401prat.pdf",
+  "source_pdf": "/tmp/ocrpdfs/dialogue.pdf",
+  "page_count": 24,
+  "chunk_size": 24,
+  "combined_file": "combined.md",
+  "batches": [
+    {
+      "batch_index": 1,
+      "start_page": 1,
+      "end_page": 24,
+      "file": "batches/batch-001.md"
+    }
+  ]
+}

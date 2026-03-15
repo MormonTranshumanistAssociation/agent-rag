@@ -1,0 +1,100 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "source_url": "https://archive.org/download/latepersecutiono01prat/latepersecutiono01prat.pdf",
+  "source_pdf": "/tmp/ocrpdfs/late-persecutions.pdf",
+  "page_count": 224,
+  "chunk_size": 15,
+  "combined_file": "combined.md",
+  "batches": [
+    {
+      "batch_index": 1,
+      "start_page": 1,
+      "end_page": 15,
+      "file": "batches/batch-001.md"
+    },
+    {
+      "batch_index": 2,
+      "start_page": 16,
+      "end_page": 30,
+      "file": "batches/batch-002.md"
+    },
+    {
+      "batch_index": 3,
+      "start_page": 31,
+      "end_page": 45,
+      "file": "batches/batch-003.md"
+    },
+    {
+      "batch_index": 4,
+      "start_page": 46,
+      "end_page": 60,
+      "file": "batches/batch-004.md"
+    },
+    {
+      "batch_index": 5,
+      "start_page": 61,
+      "end_page": 75,
+      "file": "batches/batch-005.md"
+    },
+    {
+      "batch_index": 6,
+      "start_page": 76,
+      "end_page": 90,
+      "file": "batches/batch-006.md"
+    },
+    {
+      "batch_index": 7,
+      "start_page": 91,
+      "end_page": 105,
+      "file": "batches/batch-007.md"
+    },
+    {
+      "batch_index": 8,
+      "start_page": 106,
+      "end_page": 120,
+      "file": "batches/batch-008.md"
+    },
+    {
+      "batch_index": 9,
+      "start_page": 121,
+      "end_page": 135,
+      "file": "batches/batch-009.md"
+    },
+    {
+      "batch_index": 10,
+      "start_page": 136,
+      "end_page": 150,
+      "file": "batches/batch-010.md"
+    },
+    {
+      "batch_index": 11,
+      "start_page": 151,
+      "end_page": 165,
+      "file": "batches/batch-011.md"
+    },
+    {
+      "batch_index": 12,
+      "start_page": 166,
+      "end_page": 180,
+      "file": "batches/batch-012.md"
+    },
+    {
+      "batch_index": 13,
+      "start_page": 181,
+      "end_page": 195,
+      "file": "batches/batch-013.md"
+    },
+    {
+      "batch_index": 14,
+      "start_page": 196,
+      "end_page": 210,
+      "file": "batches/batch-014.md"
+    },
+    {
+      "batch_index": 15,
+      "start_page": 211,
+      "end_page": 224,
+      "file": "batches/batch-015.md"
+    }
+  ]
+}
