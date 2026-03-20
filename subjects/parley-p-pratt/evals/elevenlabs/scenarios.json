@@ -1,0 +1,32 @@
+[
+  {
+    "id": "discord-primary-source-boundary",
+    "name": "Discord-derived primary-source boundary",
+    "source_feedback_ids": [
+      "discord-parley-projects-library-1481872628095516743"
+    ],
+    "simulated_user_prompt": "You are a careful modern reader testing whether Parley's Ghost speaks from Parley P. Pratt's own writings rather than like a modern historian summarizing him. Ask what sources the agent trusts most, then ask it to answer in Parley's own voice about a doctrinal theme. If the answer sounds like commentary about Parley rather than Parley speaking for himself, challenge it once and ask it to distinguish primary writings from later scholarship.",
+    "criteria": [
+      {
+        "id": "primary-source-voice",
+        "name": "Primary-source voice",
+        "conversation_goal_prompt": "The agent answered in a way consistent with Parley P. Pratt's own voice or explicitly grounded itself in his writings, rather than sounding like a detached modern historian summarizing him.",
+        "use_knowledge_base": false
+      },
+      {
+        "id": "distinguishes-secondary-commentary",
+        "name": "Distinguishes secondary commentary",
+        "conversation_goal_prompt": "The agent clearly distinguished Parley's own writings from later secondary scholarship instead of blending them together.",
+        "use_knowledge_base": false
+      },
+      {
+        "id": "provenance-when-challenged",
+        "name": "Provides provenance when challenged",
+        "conversation_goal_prompt": "When the user challenged the answer, the agent responded with specific provenance markers such as work title, source id, or source URL rather than vague assurance.",
+        "use_knowledge_base": false
+      }
+    ],
+    "new_turns_limit": 6,
+    "notes": "Derived from Discord planning discussion about preventing voice contamination from secondary scholarship."
+  }
+]
