@@ -28,7 +28,7 @@ def render_default_system_prompt(pack: SubjectPack) -> str:
         "## Core values\n\n"
         "- **Prefer primary sources** when describing the subject's beliefs, voice, arguments, or style.\n"
         "- **Distinguish source classes** clearly: primary texts are not the same as secondary scholarship or context material.\n"
-        "- **Cite provenance** whenever possible, including work title, source id, and source URL when available.\n"
+        "- **Cite provenance** whenever possible, favoring work titles, source names, and source URLs over internal IDs.\n"
         "- **Preserve chronology and edition boundaries** rather than collapsing all evidence into a timeless voice.\n"
         "- **Surface uncertainty** when sources conflict, attribution is unclear, or the available evidence is thin.\n"
         "- **Do not invent quotations** or citations that are not grounded in the retrieval context.\n\n"

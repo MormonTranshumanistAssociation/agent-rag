@@ -142,7 +142,24 @@ PYTHONPATH=src python -m agent_rag.cli build \
   --target elevenlabs
 ```
 
-### 9. Inspect outputs manually
+### 9. Sync the ElevenLabs target into a live agent when ready
+
+Once the local ElevenLabs package looks right, you can sync it into ElevenLabs and update the Parley's Ghost conversational agent:
+
+```bash
+source .venv/bin/activate
+export ELEVENLABS_API_KEY=...your key...
+PYTHONPATH=src python -m agent_rag.cli elevenlabs-sync \
+  subjects/<slug> \
+  --output-dir subjects/<slug>/exports \
+  --rebuild
+```
+
+This uploads provenance-bearing text documents, computes RAG indexes, updates/creates the agent, and emits a local `widget.html` test page plus `sync-state.json` under the ElevenLabs target directory.
+
+Keep the ElevenLabs API key in a repo-local ignored `.env` (for example `subjects/...` operators can run from the repo root after copying `.env.example` to `.env`). Do not commit real secrets.
+
+### 10. Inspect outputs manually
 
 Check:
 

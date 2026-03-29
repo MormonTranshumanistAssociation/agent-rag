@@ -5,6 +5,12 @@ import os
 from pathlib import Path
 from typing import Sequence
 
+from .elevenlabs import (
+    DEFAULT_ELEVENLABS_AGENT_NAME,
+    evaluate_elevenlabs_agent,
+    sync_elevenlabs_subject,
+)
+from .env import load_repo_env
 from .export_targets import DEFAULT_EXPORT_TARGETS, EXPORT_TARGETS
 from .ocr_filter import prepare_ocr_review_packet
 from .ocr_proofreader import proofread_ocr_review_packet
@@ -62,10 +68,32 @@ def _build_parser() -> argparse.ArgumentParser:
     proofread_ocr_parser.add_argument("--chunk-chars", type=int, default=6000)
     proofread_ocr_parser.add_argument("--context-paragraphs", type=int, default=1)
 
+    elevenlabs_sync_parser = subparsers.add_parser(
+        "elevenlabs-sync",
+        help="Sync the ElevenLabs target package into ElevenLabs knowledge base, update/create a Parley's Ghost agent, and emit a local widget page",
+    )
+    elevenlabs_sync_parser.add_argument("subject_dir", type=Path)
+    elevenlabs_sync_parser.add_argument("--output-dir", type=Path, default=None)
+    elevenlabs_sync_parser.add_argument("--rebuild", action="store_true")
+    elevenlabs_sync_parser.add_argument("--api-key", default=None)
+    elevenlabs_sync_parser.add_argument("--agent-name", default=DEFAULT_ELEVENLABS_AGENT_NAME)
+    elevenlabs_sync_parser.add_argument("--voice-id", default=None)
+    elevenlabs_sync_parser.add_argument("--voice-name", default=None)
+
+    elevenlabs_eval_parser = subparsers.add_parser(
+        "elevenlabs-eval",
+        help="Run simple simulated-conversation evals against the synced ElevenLabs agent",
+    )
+    elevenlabs_eval_parser.add_argument("subject_dir", type=Path)
+    elevenlabs_eval_parser.add_argument("--output-dir", type=Path, default=None)
+    elevenlabs_eval_parser.add_argument("--api-key", default=None)
+    elevenlabs_eval_parser.add_argument("--agent-id", default=None)
+
     return parser
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+    load_repo_env()
     parser = _build_parser()
     args = parser.parse_args(list(argv) if argv is not None else None)
 
@@ -121,6 +149,40 @@ def main(argv: Sequence[str] | None = None) -> int:
             context_paragraphs=args.context_paragraphs,
         )
         print(f"Proofread OCR review packet -> {output_path}")
+        return 0
+
+    if args.command == "elevenlabs-sync":
+        result = sync_elevenlabs_subject(
+            args.subject_dir,
+            output_dir=args.output_dir,
+            rebuild=args.rebuild,
+            api_key=args.api_key,
+            agent_name=args.agent_name,
+            voice_id=args.voice_id,
+            voice_name=args.voice_name,
+        )
+        print(
+            f"Synced ElevenLabs target -> {result.document_count} docs "
+            f"(created {result.created_documents}, recreated {result.recreated_documents}, reused {result.reused_documents}, deleted {result.deleted_documents}); "
+            f"agent {result.agent_name} ({result.agent_id}), voice {result.voice_id}, widget {result.widget_path}"
+        )
+        return 0
+
+    if args.command == "elevenlabs-eval":
+        resolved_output_dir = args.output_dir or args.subject_dir / "exports"
+        results = evaluate_elevenlabs_agent(
+            target_dir=resolved_output_dir / "targets" / "elevenlabs",
+            agent_id=args.agent_id,
+            api_key=args.api_key,
+        )
+        print(f"Ran {len(results)} ElevenLabs eval scenario(s)")
+        for result in results:
+            summaries = []
+            for criteria_id, criteria in sorted(result.criteria_results.items()):
+                verdict = criteria.get("result") or "unknown"
+                summaries.append(f"{criteria_id}={verdict}")
+            joined = ", ".join(summaries) if summaries else "no criteria returned"
+            print(f"- {result.scenario_id}: {joined}")
         return 0
 
     parser.error(f"Unknown command: {args.command}")
