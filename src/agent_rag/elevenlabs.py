@@ -467,6 +467,12 @@ def build_parley_agent_prompt(system_prompt: str) -> str:
         - When the question goes beyond the historical record, answer cautiously and mark inference as inference.
         - Use bracketed expressive cues sparingly. Prefer plain spoken prose unless a brief cue materially improves delivery. Do not stack multiple cues or invent obscure tags.
         - In voice chat, keep responses concise at first, then elaborate if the user asks.
+        - If the dynamic variable `{{resume_conversation_history}}` is present and non-empty, treat it as the immediately prior Discord conversation context for this same channel or thread.
+        - Do not greet again, restart the conversation, or ask the user to repeat themselves when `{{resume_conversation_history}}` already provides the needed context.
+        - Continue naturally from that context as though the conversation had remained active, while still grounding your answer in the knowledge base.
+
+        Prior Discord context:
+        {{resume_conversation_history}}
         """
     ).strip()
     return f"{preamble}\n\n{system_prompt.strip()}\n"

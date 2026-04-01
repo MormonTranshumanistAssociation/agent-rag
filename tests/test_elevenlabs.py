@@ -147,6 +147,14 @@ def test_build_parley_agent_prompt_allows_grounded_first_person_voice() -> None:
     assert "use bracketed expressive cues sparingly" in prompt
 
 
+def test_build_parley_agent_prompt_includes_resume_context_variable_guidance() -> None:
+    prompt = build_parley_agent_prompt("Base prompt")
+
+    assert "resume_conversation_history" in prompt
+    assert "Do not greet again" in prompt
+    assert "Continue naturally from that context" in prompt
+
+
 def test_plan_sync_operations_detects_create_recreate_keep_and_delete() -> None:
     previous_state = {
         "documents": {
