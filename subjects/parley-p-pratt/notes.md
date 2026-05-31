@@ -55,6 +55,10 @@ The clean corpus now includes all four Parley P. Pratt titles currently availabl
 
 This is a much stronger bootstrap than the earlier seed excerpts. The corpus now combines Gutenberg-derived clean texts where available with Gemini 3.1 Pro direct OCR for the remaining scan-dependent primary works. *Mormonism Unveiled* and *A Dialogue between Joseph Smith and the Devil* are now present as Gemini-derived whole-work clean texts, while *Late Persecutions* is present as a Gemini-derived sectioned historical narrative.
 
+## Secondary/context texts currently ingested
+
+- *The Life of John Taylor* (B. H. Roberts, 1892; Project Gutenberg eBook 45303) is represented by selected passages that explicitly mention Parley P. Pratt or direct Taylor-Pratt interactions. It is useful for context around Taylor's conversion, shared missions, and later remembrances, but it must remain secondary biography rather than Parley's own voice.
+
 ## Good next steps
 
 - perform spot-proofing / correction passes on the Gemini-derived *Late Persecutions* sections

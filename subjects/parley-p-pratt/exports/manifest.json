@@ -2,9 +2,9 @@
   "subject_id": "parley-p-pratt",
   "subject_name": "Parley P. Pratt",
   "alias_count": 4,
-  "source_count": 10,
-  "document_count": 121,
-  "chunk_count": 2416,
+  "source_count": 11,
+  "document_count": 122,
+  "chunk_count": 2476,
   "chunk_size": 900,
   "chunk_overlap": 120,
   "system_prompt": "prompts/system.md"

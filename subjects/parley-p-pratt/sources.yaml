@@ -126,6 +126,24 @@ sources:
       and editorial appendix/transcriber matter; be careful to keep the son's
       framing separate from Parley's own autobiographical writing.
 
+  - id: life-of-john-taylor-1892
+    title: "The Life of John Taylor: Third President of the Church of Jesus Christ of Latter-Day Saints"
+    author: B. H. Roberts
+    publication_year: 1892
+    source_type: secondary
+    genre: biography
+    url: https://www.gutenberg.org/ebooks/45303
+    preferred_source_format: gutenberg_plaintext
+    verification_url: https://www.gutenberg.org/files/45303/45303-0.txt
+    rights: public_domain
+    priority: medium
+    ingest_status: selected_excerpts_ingested
+    notes: >-
+      Secondary biography of John Taylor containing accounts of Taylor's
+      conversion under Parley P. Pratt's preaching, later Taylor-Pratt
+      interactions, shared missions, and remembrances. Included for historical
+      context only; it must not be treated as Parley's own voice.
+
   - id: wikipedia-parley-p-pratt
     title: Parley P. Pratt - Wikipedia
     author: Wikipedia contributors
